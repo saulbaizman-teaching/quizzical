@@ -1,0 +1,80 @@
+* {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+    margin: 50px ;
+    background-color: #efefef;
+}
+
+section#main h1 {
+    font-size: 2em;
+}
+section#main h3 {
+    margin-top: 40px ;
+}
+
+section#main {
+    padding: 30px 60px ;
+    max-width: 1400px ;
+    background-color: #fff;
+    margin-left: auto ;
+    margin-right: auto ;
+    border-radius: 5px;
+    box-shadow: rgba(230,230,230,1) 0px 1px 10px 10px;
+}
+
+section#main #quiz_body {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+}
+
+section#main #quiz_body .question_number {
+    text-align: right;
+    padding-right: 7px;
+}
+
+section#main ul.answers {
+    list-style-type: upper-alpha;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+section#main ul.answers li {
+    margin: 10px 0 ;
+    padding: 20px 20px ;
+    background-color: #eee;
+    border-radius: 5px;
+    width: 500px ;
+    /*box-sizing: border-box ;*/
+    transition: background-color,box-shadow .25s ease ;
+    border: 2px solid #fff ;
+    line-height: 1.6em ;
+}
+
+section#main ul.answers li.hover {
+    background-color: #666;
+    color: #fff;
+    cursor: pointer;
+}
+
+section#main ul.answers li.correct_answer {
+    background-color: #3EAE1A ;
+    color: #fff ;
+}
+
+section#main ul.answers li.incorrect_answer {
+    background-color: #C31919 ;
+    color: #fff ;
+}
+
+section#main ul.answers li.correct_answer_not_selected {
+    /*border: 2px solid #3EAE1A ;*/
+    /*https://www.tutorialrepublic.com/faq/how-to-place-border-inside-of-div-element-using-css.php*/
+    box-shadow: inset 0px 0px 0px 2px #3EAE1A;
+}
+
+section#main p.summary {
+    padding-left: 20px;
+    font-size: 1.5em ;
+}
