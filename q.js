@@ -1,6 +1,7 @@
 let correct_answer_count = 0 ;
 let answered_question_count = 0 ;
 let total_question_count = jQuery('div.answers').length ; // FIXME
+let play_sound = false ;
 // console.log ('total_question_count:',total_question_count) ;
 
 jQuery(document).ready ( function ( ) {
@@ -50,6 +51,9 @@ jQuery(document).ready ( function ( ) {
             jQuery(icon_selector).html('&#10004;');
             jQuery(icon_selector).addClass('correct');
             // console.log('this class:',jQuery(this).attr('class')) ;
+            if ( play_sound ) {
+                new Audio('mp4/yay.mp4').play();
+            }
             correct_answer_count += 1;
         } else {
             jQuery(this).addClass('incorrect_answer');
@@ -57,6 +61,9 @@ jQuery(document).ready ( function ( ) {
             let icon_selector = 'div.'+div_classes.replace(/ /g,'.')+'+div.icon' ;
             jQuery(icon_selector).html('&#10008;');
             jQuery(icon_selector).addClass('incorrect');
+            if ( play_sound ) {
+                new Audio('mp4/sad-trombone.mp4').play();
+            }
             // find the correct answer
             jQuery('div.' + question_class + '.is_correct').addClass('correct_answer_not_selected');
         }
@@ -77,8 +84,16 @@ jQuery(document).ready ( function ( ) {
         if ( answered_question_count == total_question_count ) {
             jQuery('section#main').append ('<p class="summary">You got ' + correct_answer_count + ' out of ' + total_question_count + ' questions correct. Hooray!</p>') ;
             jQuery('body')[0].scrollIntoView(false);
+            if ( play_sound ) {
+                if ( ( correct_answer_count/total_question_count) > .5 ) {
+                    new Audio('mp4/applause.mp4').play();
+                }
+                else {
+                    new Audio('mp4/slow-clap.mp4').play();
+                }
+            }
 
-        }
+            }
 
     });
 
