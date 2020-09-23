@@ -93,9 +93,9 @@ section#main div.answers div.incorrect_answer {
 }
 
 section#main div.answers div.icon {
-    padding: 20px 0 ;
-    margin: 10px 0 ;
     border: 2px solid #fff ;
+    font-size: 35px ;
+    align-self: center;
 }
 
 section#main div.answers div.icon.correct {
