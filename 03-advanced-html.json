@@ -1,0 +1,119 @@
+{
+  "quizzes":
+  [
+    {
+      "quizname": "week three: advanced html",
+      "questions":
+      [
+        {
+          "question_text": "html stands for...",
+          "answers":
+          [
+            { "answer_text": "hypertext markup language" },
+            { "answer_text": "hypertext machine language" },
+            { "answer_text": "hypertronic machine lexicon" },
+            { "answer_text": "hypertext machine lexicon" }
+          ],
+          "correct_answer": "0"
+        },
+        {
+          "question_text": "the web was invented in 1989 by...",
+          "answers":
+          [
+            { "answer_text": "sir jim berners-lee" },
+            { "answer_text": "sir tim berners-lee" },
+            { "answer_text": "sir jim lee-burners" },
+            { "answer_text": "sir tim lee-burners" }
+          ],
+          "correct_answer": "1"
+        },
+        {
+          "question_text": "if we think of front-end web technologies (html, css, and javascript) as a layered cake, html is the...",
+          "answers":
+          [
+            { "answer_text": "top layer" },
+            { "answer_text": "middle layer" },
+            { "answer_text": "bottom layer" },
+            { "answer_text": "frosting" }
+          ],
+          "correct_answer": "2"
+        },
+        {
+          "question_text": "how many headings are in html?",
+          "answers":
+          [
+            { "answer_text": "4" },
+            { "answer_text": "6" },
+            { "answer_text": "8" },
+            { "answer_text": "as many as you want" }
+          ],
+          "correct_answer": "1"
+        },
+        {
+          "question_text": "true or false: web technologies are available at no cost.",
+          "answers":
+          [
+            { "answer_text": "true" },
+            { "answer_text": "false" }
+          ],
+          "correct_answer": "0"
+        },
+        {
+          "question_text": "how is whitespace treated in html?",
+          "answers":
+          [
+            { "answer_text": "multiple whitespace characters are collapsed into one." },
+            { "answer_text": "multiple whitespace characters are displayed as is." },
+            { "answer_text": "multiple spaces are collapsed into one space, but multiple tabs and paragraph returns are displayed as is." },
+            { "answer_text": "spaces and tabs are collapsed into one space, but paragraph returns are displayed as is." }
+          ],
+          "correct_answer": "0"
+        },
+        {
+          "question_text": "the best tag to use for a quotation is...",
+          "answers":
+          [
+            { "answer_text": "<q>" },
+            { "answer_text": "<quote>" },
+            { "answer_text": "<quotation>" },
+            { "answer_text": "<blockquote>" }
+          ],
+          "correct_answer": "3"
+        },
+        {
+          "question_text": "which of the following is NOT a valid html tag?",
+          "answers":
+          [
+            { "answer_text": "<ins>" },
+            { "answer_text": "<fr>" },
+            { "answer_text": "<a>" },
+            { "answer_text": "<dfn>" }
+          ],
+          "correct_answer": "1"
+        },
+        {
+          "question_text": "html5 was released in...",
+          "answers":
+          [
+            { "answer_text": "1992" },
+            { "answer_text": "1996" },
+            { "answer_text": "2000" },
+            { "answer_text": "2004" }
+          ],
+          "correct_answer": "2"
+        },
+        {
+          "question_text": "elements that start on a new line in the browser window are known as _____-level elements.",
+          "answers":
+          [
+            { "answer_text": "inline" },
+            { "answer_text": "iframe" },
+            { "answer_text": "paragraph" },
+            { "answer_text": "block" }
+          ],
+          "correct_answer": "3"
+        }
+      ]
+    }
+  ]
+}
