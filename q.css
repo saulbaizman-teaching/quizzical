@@ -116,7 +116,7 @@ section#main div.question_details div.explanation {
     display: none;
     margin-top: 1em ;
     width: 540px ;
-    border-left: 2px solid #ccc ;
+    border-left: 4px solid #ccc ;
     padding-left: 10px ;
     line-height: 1.6em ;
     margin-left: 2px ;
@@ -124,13 +124,13 @@ section#main div.question_details div.explanation {
 section#main div.question_details div.explanation a {
     color: #000 ;
     text-decoration: none;
-    border-bottom: 2px dotted #ccc ;
+    border-bottom: 2px solid #ccc ;
     padding-bottom: 1px ;
     transition: border-bottom .3s ease ;
 }
 section#main div.question_details div.explanation a:hover,
 section#main div.question_details div.explanation a:focus {
-    border-bottom: 2px dotted #000 ;
+    border-bottom: 2px solid #000 ;
 }
 
 section#main p.summary {
