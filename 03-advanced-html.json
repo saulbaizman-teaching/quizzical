@@ -2,116 +2,121 @@
   "quizzes":
   [
     {
-      "quizname": "week three: advanced html",
+      "quizname": "week three: advanced html and imagery",
       "questions":
       [
         {
-          "question_text": "html stands for...",
+          "question_text": "the following formats are appropriate for the web except...",
           "answers":
           [
-            { "answer_text": "hypertext markup language" },
-            { "answer_text": "hypertext machine language" },
-            { "answer_text": "hypertronic machine lexicon" },
-            { "answer_text": "hypertext machine lexicon" }
+            { "answer_text": "jpeg" },
+            { "answer_text": "png" },
+            { "answer_text": "svg" },
+            { "answer_text": "bmp" }
           ],
-          "correct_answer": "0"
+          "correct_answer": "3",
+          "explanation": "The <a target='_blank' href='https://en.wikipedia.org/wiki/BMP_file_format'>Windows bitmap (BMP) format</a> is an uncompressed format that will not be rendered by a web browser."
         },
         {
-          "question_text": "the web was invented in 1989 by...",
-          "answers":
-          [
-            { "answer_text": "sir jim berners-lee" },
-            { "answer_text": "sir tim berners-lee" },
-            { "answer_text": "sir jim lee-burners" },
-            { "answer_text": "sir tim lee-burners" }
-          ],
-          "correct_answer": "1"
-        },
-        {
-          "question_text": "if we think of front-end web technologies (html, css, and javascript) as a layered cake, html is the...",
-          "answers":
-          [
-            { "answer_text": "top layer" },
-            { "answer_text": "middle layer" },
-            { "answer_text": "bottom layer" },
-            { "answer_text": "frosting" }
-          ],
-          "correct_answer": "2"
-        },
-        {
-          "question_text": "how many headings are in html?",
-          "answers":
-          [
-            { "answer_text": "4" },
-            { "answer_text": "6" },
-            { "answer_text": "8" },
-            { "answer_text": "as many as you want" }
-          ],
-          "correct_answer": "1"
-        },
-        {
-          "question_text": "true or false: web technologies are available at no cost.",
+          "question_text": "true or false: an <img> element is a block-level element.",
           "answers":
           [
             { "answer_text": "true" },
             { "answer_text": "false" }
           ],
-          "correct_answer": "0"
+          "correct_answer": "1",
+          "explanation": "It may come as a surprise, but the &lt;img&gt; tag is similar to &lt;strong&gt; and &lt;emphasis&gt;. Test this yourself by setting an image next to some text in a paragraph. The image will not occupy 100% of the width of the screen (or its parent element), as block-level elements do."
         },
         {
-          "question_text": "how is whitespace treated in html?",
+          "question_text": "<br>, <img>, and <meta> tags are all examples of...",
           "answers":
           [
-            { "answer_text": "multiple whitespace characters are collapsed into one." },
-            { "answer_text": "multiple whitespace characters are displayed as is." },
-            { "answer_text": "multiple spaces are collapsed into one space, but multiple tabs and paragraph returns are displayed as is." },
-            { "answer_text": "spaces and tabs are collapsed into one space, but paragraph returns are displayed as is." }
+            { "answer_text": "self-closing tags" },
+            { "answer_text": "singleton tags" },
+            { "answer_text": "style tags" },
+            { "answer_text": "opening tags" }
           ],
-          "correct_answer": "0"
+          "correct_answer": "0",
+          "explanation": "All of these tags don't have closing tags because they close themselves. What other tags don't have closing tags? Why not?"
         },
         {
-          "question_text": "the best tag to use for a quotation is...",
+          "question_text": "the following statements about the GIF format are true except:",
           "answers":
           [
-            { "answer_text": "<q>" },
-            { "answer_text": "<quote>" },
-            { "answer_text": "<quotation>" },
-            { "answer_text": "<blockquote>" }
+            { "answer_text": "it supports transparency" },
+            { "answer_text": "it supports animation" },
+            { "answer_text": "it support millions of colors" },
+            { "answer_text": "it does not support vector-based imagery" }
           ],
-          "correct_answer": "3"
+          "correct_answer": "2",
+          "explanation": "The GIF format only supports 256 colors. Kinda crappy, right? Boo-ya!"
         },
         {
-          "question_text": "which of the following is NOT a valid html tag?",
+          "question_text": "true or false: the larger the file size of imagery, the longer the page-load time.",
           "answers":
           [
-            { "answer_text": "<ins>" },
-            { "answer_text": "<fr>" },
-            { "answer_text": "<a>" },
-            { "answer_text": "<dfn>" }
+            { "answer_text": "true" },
+            { "answer_text": "false" }
           ],
-          "correct_answer": "1"
+          "correct_answer": "0",
+          "explanation": "This why the web uses &ldquo;lossy&rdquo; formats that compress imagery and squeeze out as much unnecessary information as possible."
         },
         {
-          "question_text": "html5 was released in...",
+          "question_text": "to make imagery accessible to the visually impaired, add the ______ attribute to the <img> tag.",
           "answers":
           [
-            { "answer_text": "1992" },
-            { "answer_text": "1996" },
-            { "answer_text": "2000" },
-            { "answer_text": "2004" }
+            { "answer_text": "title" },
+            { "answer_text": "alt" },
+            { "answer_text": "access" },
+            { "answer_text": "screenreader" }
+          ],
+          "correct_answer": "1",
+          "explanation": "The &ldquo;alt&rdquo; attribute renders text in lieu of imagery to allow screenreader programs such as <a target='_blank' href='https://www.freedomscientific.com/products/software/jaws/'>JAWS</a> and <a target='_blank' href='https://www.nvaccess.org'>NVDA</a> to speak the text aloud. Our visually impaired friends need them, so please don't omit them. <a target='_blank' href='https://www.w3.org/WAI/standards-guidelines/wcag/'>Learn more about web content accessibility guidelines</a>."
+        },
+        {
+          "question_text": "a 5 megabyte image with an image tag like <img width=\"100\" height=\"100\"> will load...",
+          "answers":
+          [
+            { "answer_text": "as quickly as if it were resized to 100px by 100px" },
+            { "answer_text": "one-fifth as quickly as if it were resized to 100px by 100px" },
+            { "answer_text": "as long as a 5 megabyte file takes to load" },
+            { "answer_text": "one hundred times faster than with its original dimensions" }
+          ],
+          "correct_answer": "2",
+          "explanation": "This question does not require mathematical reasoning. Resizing an image in an image editor changes a file's size on disk. Setting the width and height attributes on a webpage only changes the size at which the image appears in the browser. A 5MB image will take the same amount of time to load regardless of the width and height attributes. Therefore, always properly resize imagery!"
+        },
+        {
+          "question_text": "the GIF format was created by which internet service provider?",
+          "answers":
+          [
+            { "answer_text": "prodigy" },
+            { "answer_text": "america online" },
+            { "answer_text": "comcast"},
+            { "answer_text": "compuserve" }
+          ],
+          "correct_answer": "3",
+          "explanation": "The GIF format was patented by CompuServe in 1987. <a target='_blank' href='https://en.wikipedia.org/wiki/GIF'>According to Wikipedia</a> (where Everything Is True Because It Is In Writing), a licensing dispute prompted the development of the <a target='_blank' href='https://en.wikipedia.org/wiki/Portable_Network_Graphics'>PNG format</a>, which was made freely available for use."
+        },
+        {
+          "question_text": "one of the earliest and most famous animated GIFs is...",
+          "answers":
+          [
+            { "answer_text": "a dancing baby" },
+            { "answer_text": "a cat surfing on a roomba" },
+            { "answer_text": "an alligator nuzzling a lion" },
+            { "answer_text": "a bird pooping on another bird" }
+          ],
+          "correct_answer": "0",
+          "explanation": "As we all know, babies and animals (especially cats) rule the web. But <a target='_blank' href='https://en.wikipedia.org/wiki/Dancing_baby'>the Oogachacka Baby</a> got there first in the late 1990s.<br><img src='img/dancing-baby.gif' alt='dancing-baby.gif'>"
+        },
+        {
+          "question_text": "“gif” is pronounced with a...",
+          "answers":
+          [
+            { "answer_text": "soft G, as in “general”" },
+            { "answer_text": "hard G, as in “good”" }
           ],
           "correct_answer": "2"
-        },
-        {
-          "question_text": "elements that start on a new line in the browser window are known as _____-level elements.",
-          "answers":
-          [
-            { "answer_text": "inline" },
-            { "answer_text": "iframe" },
-            { "answer_text": "paragraph" },
-            { "answer_text": "block" }
-          ],
-          "correct_answer": "3"
         }
       ]
     }
