@@ -13,9 +13,8 @@
         <?php
         printf ( '<option value="0">%1$s</option>', 'choose a quiz') ;
         foreach ( glob('*.json') as $quiz_file ) {
-	        $selected = ( isset ( $_GET['quiz'] ) ) && ( $_GET['quiz'] == basename ( $quiz_file, '.json' ) ) ? 'selected' : '' ;
+            $selected = ( isset ( $_GET['quiz'] ) ) && ( $_GET['quiz'] == basename ( $quiz_file, '.json' ) ) ? 'selected' : '' ;
             printf ( '<option value="%1$s" %2$s>%1$s</option>', basename ( $quiz_file, '.json' ), $selected) ;
-
         }
         ?>
     </select>
@@ -25,7 +24,7 @@
     if ( ! file_exists($_GET['quiz'] . '.json') ) {
         printf ('<p>Sorry, no quiz by the name <strong>%s</strong>!</p>', $_GET['quiz']) ;
 	    print_footer ();
-        die() ;
+	    die() ;
     }
     $json = json_decode ( file_get_contents ($_GET['quiz'] . '.json' ) ) ;
     //var_dump($json);
