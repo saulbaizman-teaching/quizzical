@@ -68,12 +68,16 @@ jQuery(document).ready ( function ( ) {
             jQuery('div.' + question_class + '.is_correct').addClass('correct_answer_not_selected');
         }
 
+        // Reveal explanation.
+        jQuery('div.' + question_class + '.explanation').slideToggle();
+
+
+
+        // console.log('correct_answer_count:', correct_answer_count);
+
+        // console.log('question class:', question_class);
+
         // Get rid of the hover class.
-        // jQuery(this).removeClass('hover');
-
-        console.log('correct_answer_count:', correct_answer_count);
-
-        console.log('question class:', question_class);
         // remove event handler.
         jQuery('div.' + question_class).off('click');
         jQuery('div.' + question_class).off('mouseenter');
