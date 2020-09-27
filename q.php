@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>quizzical</title>
+    <title>quizzical | quiz</title>
     <link type="text/css" href="q.css" rel="stylesheet">
 </head>
 <body>
