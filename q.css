@@ -43,6 +43,10 @@ section#main h1 a:hover, section#main h1 a:focus {
     color: blue ;
 }
 
+section#main div#student_name_container {
+    margin-top: 1.5em ;
+}
+
 section#main h3 {
     margin-top: 40px ;
 }

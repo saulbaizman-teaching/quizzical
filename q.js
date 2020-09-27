@@ -6,6 +6,9 @@ let play_sound = false ;
 
 jQuery(document).ready ( function ( ) {
 
+    // Check for the presence of a student name.
+    check_quiz_student_name () ;
+
     // Detect change in quiz selector menu. Send user to selected quiz.
     jQuery('#quiz_selector').on ( "change", function (event) {
         if ( jQuery('#quiz_selector').val() != '0' ) {
@@ -101,7 +104,7 @@ jQuery(document).ready ( function ( ) {
             answer: answer_class.substring(answer_class.length - 1, answer_class.length), // last character
             question: question_class.substring(question_class.length - 1, question_class.length), // last character
             quiz: jQuery('#quiz_selector').val(),
-            student: "", // fixme
+            student: jQuery('#student_name').text(), // fixme
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
         })
         .then(function(docRef) {
@@ -182,7 +185,7 @@ db.collection("quizzes").doc("quiz2").set({
 /* Load answers for a given quiz. */
 
 function load_answers ( answers ) {
-    console.log('loading questions...')
+    console.log('loading answers...')
 
     // console.log(questions) ;
 
@@ -240,7 +243,6 @@ function render_stats ( stats ) {
         
         // we'll assume we only have four possible answers for any given question, even true/false questions
         for ( let answer_index = 0 ; answer_index < 4 ; answer_index++ ) {
-            // out of bounds errors?
 
             let answer_counter = 0 ;
             // loop through the items in the question_answers array
@@ -260,6 +262,56 @@ function render_stats ( stats ) {
 
 }
 
+function check_quiz_student_name () {
+    if ( document.getElementById('student_name_container' ) ) {
+        console.log ( 'checking for email address...' ) ;
+
+        if ( localStorage.student_name ) {
+
+            set_student_name () ;
+
+        }
+        else {
+
+            save_student_name () ;
+        }
+    }
+
+}
+
+function save_student_name () {
+
+    // Is there a name saved in localStorage? If not, prompt the user to enter something.
+    // If so, print the name and allow the user to edit it.
+    let student_name ;
+    if ( ! localStorage.student_name ) {
+        student_name = prompt ( "Please enter your MassArt email address: " ) ;
+    }
+    else {
+        student_name = prompt ( "Please update your MassArt email address: ", localStorage.student_name ) ;
+    }
+
+    // If the user clicks Cancel, don't save any changes.
+    if ( student_name != '' && student_name != null ) {
+        localStorage.student_name = student_name ;
+        set_student_name () ;
+    }
+    // anonymous person. give them a random ID.
+    else {
+        if ( ! localStorage.student_name ) {
+            localStorage.student_name = 'anonymous-' + Math.floor(Math.random() * 10000000000) + 1;
+            set_student_name () ;
+        }
+        // otherwise there's already a name, and they clicked cancel.
+    }
+
+}
+
+function set_student_name () {
+
+    document.getElementById('student_name').innerText = localStorage.student_name ;
+
+}
 
 /* Tally the number of questions for this quiz. */
 /* So I can have a variable number of quiz questions. */

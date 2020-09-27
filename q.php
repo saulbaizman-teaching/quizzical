@@ -18,6 +18,7 @@
         }
         ?>
     </select>
+    <div id="student_name_container"><strong>Email:</strong> <span id="student_name"></span> <small>[<a href="javascript:save_student_name();" id="edit_name">edit</a>]</small></div>
     <?php
     if ( isset ( $_GET['quiz'] ) ) :
 
