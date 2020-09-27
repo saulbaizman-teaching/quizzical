@@ -96,6 +96,7 @@ section#main div.answers div.icon {
     border: 2px solid #fff ;
     font-size: 35px ;
     align-self: center;
+    opacity: 0;
 }
 
 section#main div.answers div.icon.correct {

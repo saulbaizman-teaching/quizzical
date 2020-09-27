@@ -48,6 +48,7 @@ jQuery(document).ready ( function ( ) {
             let div_classes = jQuery(this).attr('class') ;
             let icon_selector = 'div.'+div_classes.replace(/ /g,'.')+'+div.icon' ;
             console.log('icon_selector:',icon_selector) ;
+            jQuery(icon_selector).animate( {opacity: 1}, 500 );
             jQuery(icon_selector).html('&#10004;');
             jQuery(icon_selector).addClass('correct');
             // console.log('this class:',jQuery(this).attr('class')) ;
@@ -59,6 +60,7 @@ jQuery(document).ready ( function ( ) {
             jQuery(this).addClass('incorrect_answer');
             let div_classes = jQuery(this).attr('class') ;
             let icon_selector = 'div.'+div_classes.replace(/ /g,'.')+'+div.icon' ;
+            jQuery(icon_selector).animate( {opacity: 1}, 500 );
             jQuery(icon_selector).html('&#10008;');
             jQuery(icon_selector).addClass('incorrect');
             if ( play_sound ) {
