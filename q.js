@@ -19,11 +19,11 @@ jQuery(document).ready ( function ( ) {
     jQuery('#quiz_selector_stats').on ( "change", function (event) {
         if ( jQuery('#quiz_selector_stats').val() != '0' ) {
             // fetch firestore questions
-            db.collection("questions").where("quiz", "==", jQuery('#quiz_selector_stats').val()).orderBy("question")
+            db.collection("answers").where("quiz", "==", jQuery('#quiz_selector_stats').val()).orderBy("question")
             .onSnapshot(function(querySnapshot) {
-                var questions = [];
+                let questions = [];
                 querySnapshot.forEach(function(doc) {
-                    var question = {
+                    let question = {
                         answer: doc.data().answer,
                         question: doc.data().question,
                         student: doc.data().student
@@ -47,7 +47,7 @@ jQuery(document).ready ( function ( ) {
     jQuery('div.answers div.answer').on('click', function (event) {
         // console.log('clicked answer');
         answered_question_count += 1 ;
-        // var class = jQuery(this).attr("class");
+        // let class = jQuery(this).attr("class");
         let classes = this.classList;
         // console.log('classes',class);
         // console.log('classes', classes.length);
@@ -57,9 +57,9 @@ jQuery(document).ready ( function ( ) {
         let answer_class = classes[1];
         // console.log ("question_class:",question_class) ;
         let is_correct_answer = false ;
-        var iterator = classes.values();
+        let iterator = classes.values();
 
-        for(var value of iterator) {
+        for ( let value of iterator) {
             if ( value == 'is_correct' ) {
                 is_correct_answer = true ;
                 break ;
@@ -97,7 +97,7 @@ jQuery(document).ready ( function ( ) {
         jQuery('div.' + question_class + '.explanation').slideToggle();
 
         // Add answers to Firestore.
-        db.collection("questions").add({
+        db.collection("answers").add({
             answer: answer_class.substring(answer_class.length - 1, answer_class.length), // last character
             question: question_class.substring(question_class.length - 1, question_class.length), // last character
             quiz: jQuery('#quiz_selector').val(),
@@ -145,7 +145,7 @@ jQuery(document).ready ( function ( ) {
 } ) ;
 
 /* FireStore database. */
-var firebaseConfig = {
+let firebaseConfig = {
     apiKey: "AIzaSyCeYBxu0SmvCBreK_h-IsVzB-hdEs1sDq4",
     authDomain: "quizzer-8ebdf.firebaseapp.com",
     databaseURL: "https://quizzer-8ebdf.firebaseio.com",
@@ -157,7 +157,7 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-var db = firebase.firestore();
+let db = firebase.firestore();
 
 // Add a new document in collection "cities"
 /*
@@ -181,26 +181,26 @@ db.collection("quizzes").doc("quiz2").set({
 
 /* Load answers for a given quiz. */
 
-function load_answers ( questions ) {
+function load_answers ( answers ) {
     console.log('loading questions...')
 
     // console.log(questions) ;
 
-    var quiz_question_count = _get_quiz_question_count ( questions ) ;
+    let quiz_question_count = _get_quiz_question_count ( answers ) ;
 
     // console.log(quiz_question_count) ;
 
     // loop through questions
-    var stats = [] ;
-    for ( var question_index = 0 ; question_index <= quiz_question_count ; question_index++ ) {
+    let stats = [] ;
+    for ( let question_index = 0 ; question_index <= quiz_question_count ; question_index++ ) {
         // create multi-dimensional array based on question number?
 
-        var question_answers = [] ;
-        for ( var object_array_index = 0 ; object_array_index < questions.length ; object_array_index++ ) {
+        let question_answers = [] ;
+        for ( let object_array_index = 0 ; object_array_index < answers.length ; object_array_index++ ) {
             
             // Does the outer index match the question number?
-            if ( questions[object_array_index].question == question_index ) {
-                question_answers.push (questions[object_array_index].answer) ;
+            if ( answers[object_array_index].question == question_index ) {
+                question_answers.push (answers[object_array_index].answer) ;
             }
 
         }
@@ -231,20 +231,20 @@ function render_stats ( stats ) {
 
     // console.log(stats) ;
 
-    var stats_html = jQuery('div#stats') ;
+    let stats_html = jQuery('div#stats') ;
     stats_html.html('') ; // wipe it out.
 
-    for ( var question_index = 0 ; question_index < stats.length ; question_index++ ) {
+    for ( let question_index = 0 ; question_index < stats.length ; question_index++ ) {
         stats_html.append('<h2>question ' + (question_index+1) + '</h2>');
         // jQuery('<h2>question ' + (question_index+1) + '</h2>').appendTo('div#stats');
         
         // we'll assume we only have four possible answers for any given question, even true/false questions
-        for ( var answer_index = 0 ; answer_index < 4 ; answer_index++ ) {
+        for ( let answer_index = 0 ; answer_index < 4 ; answer_index++ ) {
             // out of bounds errors?
 
-            var answer_counter = 0 ;
+            let answer_counter = 0 ;
             // loop through the items in the question_answers array
-            for ( var question_answers_index = 0 ; question_answers_index < stats[question_index].question_answers.length; question_answers_index++ ) {
+            for ( let question_answers_index = 0 ; question_answers_index < stats[question_index].question_answers.length; question_answers_index++ ) {
                 // console.log ( question_index,"answer:",stats[question_index].question_answers[question_answers_index] );
 
                 if ( stats[question_index].question_answers[question_answers_index] == answer_index ) {
@@ -264,8 +264,8 @@ function render_stats ( stats ) {
 /* Tally the number of questions for this quiz. */
 /* So I can have a variable number of quiz questions. */
 function _get_quiz_question_count ( questions ) {
-    var max_question_count = 0 ;
-    for ( var question_index = 0 ; question_index < questions.length ; question_index++ ) {
+    let max_question_count = 0 ;
+    for ( let question_index = 0 ; question_index < questions.length ; question_index++ ) {
 
         if ( questions[question_index].question > max_question_count ) {
             max_question_count = questions[question_index].question ;
