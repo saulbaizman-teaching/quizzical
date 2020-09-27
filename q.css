@@ -11,7 +11,7 @@ span#q {
     /*color: blue ;*/
 }
 
-select#quiz_selector {
+select#quiz_selector, select#quiz_selector_stats {
     height: 40px ;
     padding: 0 15px ;
     background-color: #eee ;

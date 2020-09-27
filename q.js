@@ -16,6 +16,28 @@ jQuery(document).ready ( function ( ) {
         }
     } ) ;
 
+    jQuery('#quiz_selector_stats').on ( "change", function (event) {
+        if ( jQuery('#quiz_selector_stats').val() != '0' ) {
+            // fetch firestore questions
+            db.collection("questions").where("quiz", "==", jQuery('#quiz_selector_stats').val()).orderBy("question")
+            .onSnapshot(function(querySnapshot) {
+                var questions = [];
+                querySnapshot.forEach(function(doc) {
+                    var question = {
+                        answer: doc.data().answer,
+                        question: doc.data().question,
+                        student: doc.data().student
+                    } ;
+                
+                    questions.push(question);
+                    // console.log("doc.id:",doc.id)
+                });
+        
+                load_answers ( questions ) ;
+            });
+        }
+    });
+
     /* Mouse-over state toggle. */
     jQuery('div.answers div.answer').on("mouseenter mouseleave", function (event) {
         jQuery(this).toggleClass("hover");
@@ -32,7 +54,8 @@ jQuery(document).ready ( function ( ) {
         // console.log('classes', classes.values());
 
         let question_class = classes[0];
-        console.log ("question_class:",question_class) ;
+        let answer_class = classes[1];
+        // console.log ("question_class:",question_class) ;
         let is_correct_answer = false ;
         var iterator = classes.values();
 
@@ -47,7 +70,7 @@ jQuery(document).ready ( function ( ) {
             jQuery(this).addClass('correct_answer');
             let div_classes = jQuery(this).attr('class') ;
             let icon_selector = 'div.'+div_classes.replace(/ /g,'.')+'+div.icon' ;
-            console.log('icon_selector:',icon_selector) ;
+            // console.log('icon_selector:',icon_selector) ;
             jQuery(icon_selector).animate( {opacity: 1}, 500 );
             jQuery(icon_selector).html('&#10004;');
             jQuery(icon_selector).addClass('correct');
@@ -72,6 +95,22 @@ jQuery(document).ready ( function ( ) {
 
         // Reveal explanation.
         jQuery('div.' + question_class + '.explanation').slideToggle();
+
+        // Add answers to Firestore.
+        db.collection("questions").add({
+            answer: answer_class.substring(answer_class.length - 1, answer_class.length), // last character
+            question: question_class.substring(question_class.length - 1, question_class.length), // last character
+            quiz: jQuery('#quiz_selector').val(),
+            student: "", // fixme
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        })
+        .then(function(docRef) {
+            // console.log("Question written with ID: ", docRef.id);
+        })
+        .catch(function(error) {
+            console.error("Error adding question: ", error);
+        });
+        
 
 
 
@@ -99,8 +138,141 @@ jQuery(document).ready ( function ( ) {
                 }
             }
 
-            }
+        }
 
     });
 
 } ) ;
+
+/* FireStore database. */
+var firebaseConfig = {
+    apiKey: "AIzaSyCeYBxu0SmvCBreK_h-IsVzB-hdEs1sDq4",
+    authDomain: "quizzer-8ebdf.firebaseapp.com",
+    databaseURL: "https://quizzer-8ebdf.firebaseio.com",
+    projectId: "quizzer-8ebdf",
+    storageBucket: "quizzer-8ebdf.appspot.com",
+    messagingSenderId: "1012004780160",
+    appId: "1:1012004780160:web:9a764fa4dbbeb359408e65"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+var db = firebase.firestore();
+
+// Add a new document in collection "cities"
+/*
+db.collection("quizzes").doc("quiz2").set({
+    question: "1",
+    answers: {
+    0: "0",
+    1: "0",
+    2: "0",
+    3: "0"
+    }
+
+})
+    .then(function() {
+        console.log("Document successfully written!");
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
+    }, { merge: true });
+*/
+
+/* Load answers for a given quiz. */
+
+function load_answers ( questions ) {
+    console.log('loading questions...')
+
+    // console.log(questions) ;
+
+    var quiz_question_count = _get_quiz_question_count ( questions ) ;
+
+    // console.log(quiz_question_count) ;
+
+    // loop through questions
+    var stats = [] ;
+    for ( var question_index = 0 ; question_index <= quiz_question_count ; question_index++ ) {
+        // create multi-dimensional array based on question number?
+
+        var question_answers = [] ;
+        for ( var object_array_index = 0 ; object_array_index < questions.length ; object_array_index++ ) {
+            
+            // Does the outer index match the question number?
+            if ( questions[object_array_index].question == question_index ) {
+                question_answers.push (questions[object_array_index].answer) ;
+            }
+
+        }
+        // console.log (question_index,'|',question_answers.join(", ")) ;
+        stats.push ( { question_id: question_index, question_answers: question_answers} ) ;
+
+    }
+    render_stats ( stats ) ;
+
+    /*
+    db.collection("questions").where("quiz", "==", quiz)
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+    */
+
+}
+
+function render_stats ( stats ) {
+    console.log("rendering stats...") ;
+
+    // console.log(stats) ;
+
+    var stats_html = jQuery('div#stats') ;
+    stats_html.html('') ; // wipe it out.
+
+    for ( var question_index = 0 ; question_index < stats.length ; question_index++ ) {
+        stats_html.append('<h2>question ' + (question_index+1) + '</h2>');
+        // jQuery('<h2>question ' + (question_index+1) + '</h2>').appendTo('div#stats');
+        
+        // we'll assume we only have four possible answers for any given question, even true/false questions
+        for ( var answer_index = 0 ; answer_index < 4 ; answer_index++ ) {
+            // out of bounds errors?
+
+            var answer_counter = 0 ;
+            // loop through the items in the question_answers array
+            for ( var question_answers_index = 0 ; question_answers_index < stats[question_index].question_answers.length; question_answers_index++ ) {
+                // console.log ( question_index,"answer:",stats[question_index].question_answers[question_answers_index] );
+
+                if ( stats[question_index].question_answers[question_answers_index] == answer_index ) {
+                    answer_counter++ ;
+                }
+
+            }
+            stats_html.append("<p><strong>"+(answer_index+1)+":</strong> "+answer_counter+"</p>") ;
+
+        }
+
+    }
+
+}
+
+
+/* Tally the number of questions for this quiz. */
+/* So I can have a variable number of quiz questions. */
+function _get_quiz_question_count ( questions ) {
+    var max_question_count = 0 ;
+    for ( var question_index = 0 ; question_index < questions.length ; question_index++ ) {
+
+        if ( questions[question_index].question > max_question_count ) {
+            max_question_count = questions[question_index].question ;
+        }
+
+    }
+
+    return max_question_count ;
+
+}

@@ -59,7 +59,7 @@
             { "answer_text": "false" }
           ],
           "correct_answer": "0",
-          "explanation": "This why the web uses &ldquo;lossy&rdquo; formats that compress imagery and squeeze out as much unnecessary information as possible."
+          "explanation": "This is why the web uses &ldquo;lossy&rdquo; formats that compress imagery and squeeze out as much unnecessary information as possible."
         },
         {
           "question_text": "to make imagery accessible to the visually impaired, add the ______ attribute to the <img> tag.",
