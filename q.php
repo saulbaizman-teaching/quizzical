@@ -39,7 +39,7 @@
     $question_counter = 0 ;
     foreach ($quiz->questions as $question ) {
 //	    var_dump($question);
-        printf ('<div id="quiz_body">') ;
+        printf ('<div class="quiz_body q%d">',$question_counter) ;
         printf ('<div class="question_number"><h3>%1$02d.</h3></div><div class="question_details"><h3>%2$s</h3>', $question_counter+1, htmlentities($question->question_text )) ;
         printf ('<div class="answers">') ;
         $answer_counter = 0 ;

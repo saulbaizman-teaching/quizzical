@@ -47,16 +47,21 @@ section#main div#student_name_container {
     margin-top: 1.5em ;
 }
 
-section#main h3 {
+section#main div.quiz_body h3 {
     margin-top: 40px ;
 }
 
-section#main #quiz_body {
+/* remove top margin from first question. */
+section#main div.quiz_body.q0 h3 {
+    margin-top: 0 ;
+}
+
+section#main div.quiz_body {
     display: grid;
     grid-template-columns: 40px 1fr;
 }
 
-section#main #quiz_body .question_number {
+section#main div.quiz_body .question_number {
     text-align: right;
     padding-right: 7px;
 }

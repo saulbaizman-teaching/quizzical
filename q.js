@@ -2,6 +2,7 @@ let correct_answer_count = 0 ;
 let answered_question_count = 0 ;
 let total_question_count = jQuery('div.answers').length ; // FIXME
 let play_sound = false ;
+let debug = true ;
 // console.log ('total_question_count:',total_question_count) ;
 
 jQuery(document).ready ( function ( ) {
@@ -21,7 +22,7 @@ jQuery(document).ready ( function ( ) {
 
     jQuery('#quiz_selector_stats').on ( "change", function (event) {
         if ( jQuery('#quiz_selector_stats').val() != '0' ) {
-            // fetch firestore questions
+            // fetch firestore answers
             db.collection("answers").where("quiz", "==", jQuery('#quiz_selector_stats').val()).orderBy("question")
             .onSnapshot(function(querySnapshot) {
                 let questions = [];
@@ -100,22 +101,24 @@ jQuery(document).ready ( function ( ) {
         jQuery('div.' + question_class + '.explanation').slideToggle();
 
         // Add answers to Firestore.
-        db.collection("answers").add({
-            answer: answer_class.substring(answer_class.length - 1, answer_class.length), // last character
-            question: question_class.substring(question_class.length - 1, question_class.length), // last character
-            quiz: jQuery('#quiz_selector').val(),
-            student: jQuery('#student_name').text(), // fixme
-            timestamp: firebase.firestore.FieldValue.serverTimestamp()
-        })
-        .then(function(docRef) {
-            // console.log("Question written with ID: ", docRef.id);
-        })
-        .catch(function(error) {
-            console.error("Error adding question: ", error);
-        });
-        
-
-
+        if ( ! debug ) {
+            db.collection("answers").add({
+                answer: answer_class.substring(answer_class.length - 1, answer_class.length), // last character
+                question: question_class.substring(question_class.length - 1, question_class.length), // last character
+                quiz: jQuery('#quiz_selector').val(),
+                student: jQuery('#student_name').text(), // fixme
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            })
+                .then(function (docRef) {
+                    // console.log("Question written with ID: ", docRef.id);
+                })
+                .catch(function (error) {
+                    console.error("Error adding question: ", error);
+                });
+        }
+        else {
+            console.warn ('Debug mode = true. Answer not recorded.') ;
+        }
 
         // console.log('correct_answer_count:', correct_answer_count);
 
@@ -267,12 +270,9 @@ function check_quiz_student_name () {
         console.log ( 'checking for email address...' ) ;
 
         if ( localStorage.student_name ) {
-
             set_student_name () ;
-
         }
         else {
-
             save_student_name () ;
         }
     }
