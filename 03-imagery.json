@@ -28,7 +28,7 @@
           "explanation": "It may come as a surprise, but the &lt;img&gt; tag is similar to &lt;strong&gt; and &lt;emphasis&gt;. Test this yourself by setting an image next to some text in a paragraph. The image will not occupy 100% of the width of the screen (or its parent element), as block-level elements do."
         },
         {
-          "question_text": "<br>, <img>, and <meta> tags are all examples of...",
+          "question_text": "&lt;br&gt;, &lt;img&gt;, and &lt;meta&gt; tags are all examples of...",
           "answers":
           [
             { "answer_text": "self-closing tags" },
@@ -74,7 +74,7 @@
           "explanation": "The &ldquo;alt&rdquo; attribute renders text in lieu of imagery to allow screenreader programs such as <a target='_blank' href='https://www.freedomscientific.com/products/software/jaws/'>JAWS</a> and <a target='_blank' href='https://www.nvaccess.org'>NVDA</a> to speak the text aloud. Our visually impaired friends need them, so please don't omit them. <a target='_blank' href='https://www.w3.org/WAI/standards-guidelines/wcag/'>Learn more about web content accessibility guidelines</a>."
         },
         {
-          "question_text": "a 5 megabyte image with an image tag like <img width=\"100\" height=\"100\"> will load...",
+          "question_text": "a 5 megabyte image with an image tag like &lt;img width=\"100\" height=\"100\"&gt; will load...",
           "answers":
           [
             { "answer_text": "as quickly as if it were resized to 100px by 100px" },
