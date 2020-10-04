@@ -40,20 +40,22 @@
     foreach ($quiz->questions as $question ) {
 //	    var_dump($question);
         printf ('<div class="quiz_body q%d">',$question_counter) ;
-        printf ('<div class="question_number"><h3>%1$02d.</h3></div><div class="question_details"><h3>%2$s</h3>', $question_counter+1, $question->question_text ) ;
-        printf ('<div class="answers">') ;
+        printf ('<div class="question_number"><h3>%1$02d.</h3></div><h3>%2$s</h3>', $question_counter+1, $question->question_text ) ;
         $answer_counter = 0 ;
         foreach ( $question->answers as $answer) {
-            printf('<div class="question%2$s answer%3$s %4$s answer">%1$s</div><div class="icon">&nbsp;</div>',$answer->answer_text, $question_counter, $answer_counter, $question->correct_answer == $answer_counter ? 'is_correct' : '' ) ;
+            printf ('<div class="question_score%1$d answer_score%2$d"></div>', $question_counter+1, $answer_counter+1 ) ;
+            printf ('<div class="answers">') ;
+            printf ('<div class="question%2$s answer%3$s %4$s answer">%1$s</div><div class="icon">&nbsp;</div>',$answer->answer_text, $question_counter, $answer_counter, $question->correct_answer == $answer_counter ? 'is_correct' : '' ) ;
+            printf ('</div>') ;
             $answer_counter++ ;
         }
-        printf('</div>') ;
 
         if (isset($question->explanation) ) {
+            printf ('<div class="empty"></div>') ;
             printf ('<div class="question%2$s explanation">%1$s</div>', $question->explanation, $question_counter) ;
                 
         }
-        printf('</div>') ;
+        // printf('</div>') ;
         printf('</div>') ;
         $question_counter++ ;
     }

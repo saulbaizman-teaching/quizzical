@@ -136,7 +136,18 @@ section#main div.answers div.correct_answer_not_selected {
     box-shadow: inset 0px 0px 0px 2px #3EAE1A;
 }
 
-section#main div.question_details div.explanation {
+section#main div.answer_score {
+    margin: 10px 0 ;
+    padding: 20px 10px 20px 0px;
+    border: 2px solid #fff ;
+    line-height: 1.6em ;
+    color: #bbb ;
+    font-size: 0.9em ;
+    text-align: right;
+    align-self: center; /* vertically center-aligned */ 
+}
+
+section#main div.explanation {
     display: none;
     margin-top: 1em ;
     width: 540px ;
@@ -145,15 +156,15 @@ section#main div.question_details div.explanation {
     line-height: 1.6em ;
     margin-left: 2px ;
 }
-section#main div.question_details div.explanation a {
+section#main div.explanation a {
     color: #000 ;
     text-decoration: none;
     border-bottom: 2px solid #ccc ;
     padding-bottom: 1px ;
     transition: border-bottom .3s ease ;
 }
-section#main div.question_details div.explanation a:hover,
-section#main div.question_details div.explanation a:focus {
+section#main div.explanation a:hover,
+section#main div.explanation a:focus {
     border-bottom: 2px solid #000 ;
 }
 section#main code {
