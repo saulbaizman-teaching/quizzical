@@ -28,19 +28,20 @@ jQuery(document).ready ( function ( ) {
             // fetch firestore answers
             db.collection("answers").where("quiz", "==", jQuery('#quiz_selector_stats').val()).orderBy("question")
             .onSnapshot(function(querySnapshot) {
-                let questions = [];
+                let answers = [];
                 querySnapshot.forEach(function(doc) {
-                    let question = {
+                    let question_answer = {
                         answer: doc.data().answer,
                         question: doc.data().question,
                         student: doc.data().student
                     } ;
                 
-                    questions.push(question);
+                    answers.push(question_answer);
                     // console.log("doc.id:",doc.id)
                 });
         
-                load_answers ( questions ) ;
+                let answer_statistics = load_answers ( answers ) ;
+                render_stats ( answer_statistics ) ;
             });
         }
     });
@@ -217,7 +218,7 @@ function load_answers ( answers ) {
         stats.push ( { question_id: question_index, question_answers: question_answers} ) ;
 
     }
-    render_stats ( stats ) ;
+    return stats ;
 
     /*
     db.collection("questions").where("quiz", "==", quiz)
