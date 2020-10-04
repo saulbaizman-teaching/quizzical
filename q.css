@@ -49,6 +49,20 @@ section#main div#student_name_container {
 
 section#main div.quiz_body h3 {
     margin-top: 40px ;
+    margin-bottom: 10px ;
+    line-height: 1.5em;
+}
+
+section#main div.quiz_body h3 a {
+    color: rgba(0,0,0,1);
+    text-decoration: none ;
+    border-bottom: 2px solid #ccc ;
+    transition: border-bottom .3s ease;
+    padding-bottom: 2px ;
+}
+
+section#main div.quiz_body h3 a:hover, section#main div.quiz_body h3 a:focus {
+    border-bottom: 2px solid #000 ;
 }
 
 /* remove top margin from first question. */
@@ -141,6 +155,9 @@ section#main div.question_details div.explanation a {
 section#main div.question_details div.explanation a:hover,
 section#main div.question_details div.explanation a:focus {
     border-bottom: 2px solid #000 ;
+}
+section#main code {
+    font-family: 'Courier New', Courier, monospace ;
 }
 
 section#main p.summary {

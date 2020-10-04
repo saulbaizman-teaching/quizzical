@@ -40,11 +40,11 @@
     foreach ($quiz->questions as $question ) {
 //	    var_dump($question);
         printf ('<div class="quiz_body q%d">',$question_counter) ;
-        printf ('<div class="question_number"><h3>%1$02d.</h3></div><div class="question_details"><h3>%2$s</h3>', $question_counter+1, htmlentities($question->question_text )) ;
+        printf ('<div class="question_number"><h3>%1$02d.</h3></div><div class="question_details"><h3>%2$s</h3>', $question_counter+1, $question->question_text ) ;
         printf ('<div class="answers">') ;
         $answer_counter = 0 ;
         foreach ( $question->answers as $answer) {
-            printf('<div class="question%2$s answer%3$s %4$s answer">%1$s</div><div class="icon">&nbsp;</div>',htmlentities($answer->answer_text), $question_counter, $answer_counter, $question->correct_answer == $answer_counter ? 'is_correct' : '' ) ;
+            printf('<div class="question%2$s answer%3$s %4$s answer">%1$s</div><div class="icon">&nbsp;</div>',$answer->answer_text, $question_counter, $answer_counter, $question->correct_answer == $answer_counter ? 'is_correct' : '' ) ;
             $answer_counter++ ;
         }
         printf('</div>') ;

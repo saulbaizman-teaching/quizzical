@@ -3,7 +3,10 @@ let answered_question_count = 0 ;
 let total_question_count = jQuery('div.answers').length ; // FIXME
 let play_sound = false ;
 let debug = true ;
-// console.log ('total_question_count:',total_question_count) ;
+
+if ( debug ) {
+    console.info ('debug is enabled.') ;
+}
 
 jQuery(document).ready ( function ( ) {
 

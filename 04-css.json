@@ -1,0 +1,125 @@
+{
+  "quizzes":
+  [
+    {
+      "quizname": "week four: css",
+      "questions":
+      [
+        {
+          "question_text": "the acronym “css” is an abbreviation for...",
+          "answers":
+          [
+            { "answer_text": "computational style sheets" },
+            { "answer_text": "coruscating style sheets" },
+            { "answer_text": "convoluted style sheets" },
+            { "answer_text": "cascading style sheets" }
+          ],
+          "correct_answer": "3",
+          "explanation": "It’s all about the cascade, baby! (If you got this one incorrect, please do the reading next time!)"
+        },
+        {
+          "question_text": "css does not control a website’s...",
+          "answers":
+          [
+            { "answer_text": "appearance" },
+            { "answer_text": "layout" },
+            { "answer_text": "interaction + behavior" }
+          ],
+          "correct_answer": "2",
+          "explanation": "In the metaphorical layer cake of front-end web technologies, CSS is in the middle and governs appearance and layout (presentation). JavaScript is responsible for interaction and behavior. To refresh your memory, here again is the web cake:<br><br><img src='img/web-cake.png' width='240' height='154' alt='dancing-baby.gif'>"
+        },        
+        {
+          "question_text": "the following are all valid selectors except...",
+          "answers":
+          [
+            { "answer_text": "<code>div</code>" },
+            { "answer_text": "<code>&gt; div</code>" },
+            { "answer_text": "<code>#div</code>" },
+            { "answer_text": "<code>.div</code>" }
+          ],
+          "correct_answer": "1",
+          "explanation": "We’ll talk through this one together."
+        },
+        {
+          "question_text": "what is the difference between a class and an ID?",
+          "answers":
+          [
+            { "answer_text": "an ID can be assigned to multiple elements, a class to just one" },
+            { "answer_text": "IDs can only be assigned to specific HTML tags, and classes have no such restrictions" },
+            { "answer_text": "a class can be assigned to multiple elements, an ID to just one" }
+          ],
+          "correct_answer": "2"
+        },
+        {
+          "question_text": "which of the following statements is false?",
+          "answers":
+          [
+            { "answer_text": "an element can be assigned both a class and an ID" },
+            { "answer_text": "an element can be assigned multiple classes" },
+            { "answer_text": "an element can be assigned multiple IDs" }
+          ],
+          "correct_answer": "2",
+          "explanation": "It’s true: an element can have one or more classes assigned to it &lt;strong&gt;and&lt;/strong&gt; have an ID assigned to it, too. (This is similar to the previous question but not quite.)"
+        },
+        {
+          "question_text": "you can include css styles in a webpage through all of the following methods except...",
+          "answers":
+          [
+            { "answer_text": "through a <code>style</code> attribute attached to an HTML element" },
+            { "answer_text": "through an external file via a <code>&lt;link&gt;</code> tag in the document’s <code>&lt;head&gt;</code>" },
+            { "answer_text": "through a <code>&lt;style&gt;</code> tag in the document’s <code>&lt;head&gt;</code>" },
+            { "answer_text": "through a <code>&lt;meta&gt;</code> tag in the document’s <code>&lt;head&gt;</code>" }
+          ],
+          "correct_answer": "3",
+          "explanation": "All of these methods are legit except the one that ain’t. Learn more about including styles on your webpage on pages 235–236 of <em>HTML & CSS</em>."
+        },
+        {
+          "question_text": "a descendent selector is present in which selector below?",
+          "answers":
+          [
+            { "answer_text": "<code>#whatsup &gt; .you_dig</code>" },
+            { "answer_text": "<code>h1.is_this ~ p.confusing_you</code>" },
+            { "answer_text": "<code>.flarp #morp</code>" },
+            { "answer_text": "<code>h5.can_i_get_an + p.oh_yeah</code>" }
+          ],
+          "correct_answer": "2",
+          "explanation": "<a href='https://css-tricks.com/almanac/selectors/d/descendant/' rel='noopener' target='_blank'>Learn more about the descendent selector here</a> or on page 238 of <em>HTML & CSS</em>. Advanced selectors like the descendent selector allow you to reduce the amount of HTML on your webpages and reduce or eliminate the need to assign classes and IDs to elements."
+        },
+        {
+          "question_text": "the cascade obeys the following rules except...",
+          "answers":
+          [
+            { "answer_text": "when two selectors are the same, the last rule wins" },
+            { "answer_text": "a more specific selector overrides a less specific selector" },
+            { "answer_text": "when two selectors are the same, an identical property's value can be manually overridden by suffixing it with “!important”" },
+            { "answer_text": "a less specific selector inherits the properties of a more specific selector" }
+          ],
+          "correct_answer": "3",
+          "explanation": "Oops! I gave away the answer to question 1. And the correct answer here is just gibberish: selectors don't inherit properties, elements do. Learn more about the cascade on page 239 of <em>HTML & CSS</em>."
+        },
+        {
+          "question_text": "Of the following CSS properties below, which one is inherited from a parent element?",
+          "answers":
+          [
+            { "answer_text": "<code>font-family</code>" },
+            { "answer_text": "<code>border</code>" },
+            { "answer_text": "<code>background-color</code>"},
+            { "answer_text": "<code>padding</code>" }
+          ],
+          "correct_answer": "0",
+          "explanation": "If any of the properties except <code>font-family</code> were inherited, webpages would quickly become unusable. Learn more about inheritance on page 240 of <em>HTML & CSS</em>."
+        },
+        {
+          "question_text": "true or false: <a href='https://caniuse.com/' target='_blank' rel='noopener'>caniuse.com</a> is an excellent website to consult when you need to know whether a CSS property is supported by a specific version of a specific web browser.",
+          "answers":
+          [
+            { "answer_text": "true" },
+            { "answer_text": "false" }
+          ],
+          "correct_answer": "0",
+          "explanation": "Uh, it’s true: <a href='https://caniuse.com/' target='_blank' rel='noopener'>caniuse.com</a> is an excellent website to consult when you need to know whether a CSS property is supported by a specific version of a specific web browser. If you’re done with the quiz, <a href='https://caniuse.com/' target='_blank' rel='noopener'>check it out right now!</a>"
+        }
+      ]
+    }
+  ]
+}
