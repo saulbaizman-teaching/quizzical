@@ -98,7 +98,7 @@
           "explanation": "Oops! I gave away the answer to question 1. And the correct answer here is just gibberish: selectors don't inherit properties, elements do. Learn more about the cascade on page 239 of <em>HTML & CSS</em>."
         },
         {
-          "question_text": "Of the following CSS properties below, which one is inherited from a parent element?",
+          "question_text": "of the following CSS properties below, which one is inherited from a parent element?",
           "answers":
           [
             { "answer_text": "<code>font-family</code>" },
