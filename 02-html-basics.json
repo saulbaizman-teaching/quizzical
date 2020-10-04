@@ -73,10 +73,10 @@
           "question_text": "the best tag to use for a quotation is...",
           "answers":
           [
-            { "answer_text": "<q>" },
-            { "answer_text": "<quote>" },
-            { "answer_text": "<quotation>" },
-            { "answer_text": "<blockquote>" }
+            { "answer_text": "<code>&lt;q&gt;</code>" },
+            { "answer_text": "<code>&lt;quote&gt;</code>" },
+            { "answer_text": "<code>&lt;quotation&gt;</code>" },
+            { "answer_text": "<code>&lt;blockquote&gt;</code>" }
           ],
           "correct_answer": "3"
         },
@@ -84,10 +84,10 @@
           "question_text": "which of the following is NOT a valid html tag?",
           "answers":
           [
-            { "answer_text": "<ins>" },
-            { "answer_text": "<fr>" },
-            { "answer_text": "<a>" },
-            { "answer_text": "<dfn>" }
+            { "answer_text": "<code>&lt;ins&gt;</code>" },
+            { "answer_text": "<code>&lt;fr&gt;</code>" },
+            { "answer_text": "<code>&lt;a&gt;</code>" },
+            { "answer_text": "<code>&lt;dfn&gt;</code>" }
           ],
           "correct_answer": "1"
         },
