@@ -59,7 +59,7 @@
             { "answer_text": "an element can be assigned multiple IDs" }
           ],
           "correct_answer": "2",
-          "explanation": "It’s true: an element can have one or more classes assigned to it &lt;strong&gt;and&lt;/strong&gt; have an ID assigned to it, too. (This is similar to the previous question but not quite.)"
+          "explanation": "It’s true: an element can have one or more classes assigned to it <strong>and</strong> have an ID assigned to it, too. (This is similar to the previous question but not quite.)"
         },
         {
           "question_text": "you can include css styles in a webpage through all of the following methods except...",
