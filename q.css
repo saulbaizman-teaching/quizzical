@@ -133,7 +133,7 @@ section#main div.answers div.icon.incorrect {
 section#main div.answers div.correct_answer_not_selected {
     /*border: 2px solid #3EAE1A ;*/
     /*https://www.tutorialrepublic.com/faq/how-to-place-border-inside-of-div-element-using-css.php*/
-    box-shadow: inset 0px 0px 0px 2px #3EAE1A;
+    box-shadow: inset 0px 0px 0px 3px #3EAE1A;
 }
 
 section#main div.answer_score {
@@ -145,6 +145,7 @@ section#main div.answer_score {
     font-size: 0.9em ;
     text-align: right;
     align-self: center; /* vertically center-aligned */ 
+    opacity: 0;
 }
 
 section#main div.explanation {

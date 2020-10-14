@@ -1,6 +1,6 @@
 let correct_answer_count = 0 ;
 let answered_question_count = 0 ;
-let total_question_count = jQuery('div.answers').length ; // FIXME
+let total_question_count = jQuery('div.quiz_body').length ;
 let play_sound = false ;
 let debug = true ;
 
@@ -13,7 +13,7 @@ jQuery(document).ready ( function ( ) {
     // Check for the presence of a student name.
     check_quiz_student_name () ;
 
-    // Detect change in quiz selector menu. Send user to selected quiz.
+    // Detect change in quiz selector menu (on q.php). Send user to selected quiz.
     jQuery('#quiz_selector').on ( "change", function (event) {
         if ( jQuery('#quiz_selector').val() != '0' ) {
             // console.log ('#quiz_selector',jQuery('#quiz_selector').val());
@@ -23,6 +23,8 @@ jQuery(document).ready ( function ( ) {
         }
     } ) ;
 
+    // For viewing the quiz statistics.
+    // Detect change in quiz selector menu (on s.php).
     jQuery('#quiz_selector_stats').on ( "change", function (event) {
         if ( jQuery('#quiz_selector_stats').val() != '0' ) {
             // fetch firestore answers
@@ -46,12 +48,12 @@ jQuery(document).ready ( function ( ) {
         }
     });
 
-    /* Mouse-over state toggle. */
+    // Mouse-over state toggle.
     jQuery('div.answers div.answer').on("mouseenter mouseleave", function (event) {
         jQuery(this).toggleClass("hover");
     });
 
-    /* When clicked, check if an answer is correct. */
+    // When an answer is clicked, check if it's correct.
     jQuery('div.answers div.answer').on('click', function (event) {
         // console.log('clicked answer');
         answered_question_count += 1 ;
@@ -63,7 +65,8 @@ jQuery(document).ready ( function ( ) {
 
         let question_class = classes[0];
         let answer_class = classes[1];
-        // console.log ("question_class:",question_class) ;
+        console.log ("question_class:",question_class) ;
+        console.log ("answer_class:",answer_class) ;
         let is_correct_answer = false ;
         let iterator = classes.values();
 
@@ -104,6 +107,16 @@ jQuery(document).ready ( function ( ) {
         // Reveal explanation.
         jQuery('div.' + question_class + '.explanation').slideToggle();
 
+        // Reveal answer scores for this question.
+        // Get the question index number.
+        let q_index = jQuery(this).parent().parent().index('div.quiz_body') ;
+        // console.log('q_index:',q_index);
+        jQuery('div.q' + q_index + ' div.answer_score').animate( {opacity: 1}, 500 );
+        // console.log('this:',this);
+
+        // https://api.jquery.com/index/
+        // console.log('index:',jQuery(this).parent().parent().index('div.quiz_body')) ;
+
         // Add answers to Firestore.
         if ( ! debug ) {
             db.collection("answers").add({
@@ -124,18 +137,22 @@ jQuery(document).ready ( function ( ) {
             console.warn ('Debug mode = true. Answer not recorded.') ;
         }
 
-        // console.log('correct_answer_count:', correct_answer_count);
+        // Update the answer tally.
+        update_answer_tally ( ) ;
 
+        // console.log('correct_answer_count:', correct_answer_count);
         // console.log('question class:', question_class);
 
         // Get rid of the hover class.
-        // remove event handler.
+        // Remove event handler.
         jQuery('div.' + question_class).off('click');
         jQuery('div.' + question_class).off('mouseenter');
         jQuery('div.' + question_class).off('mouseleave');
 
-        // is this the last question?
-        // if so, display a summary.
+        // Is this the last question?
+        // If so, display a summary.
+        // console.log ('answered_question_count:',answered_question_count) ;
+        // console.log('total_question_count:',total_question_count) ;
         if ( answered_question_count == total_question_count ) {
             jQuery('section#main').append ('<p class="summary">You got ' + correct_answer_count + ' out of ' + total_question_count + ' questions correct. Hooray!</p>') ;
             jQuery('body')[0].scrollIntoView(false);
@@ -200,10 +217,9 @@ function load_answers ( answers ) {
 
     // console.log(quiz_question_count) ;
 
-    // loop through questions
+    // Loop through questions
     let stats = [] ;
     for ( let question_index = 0 ; question_index <= quiz_question_count ; question_index++ ) {
-        // create multi-dimensional array based on question number?
 
         let question_answers = [] ;
         for ( let object_array_index = 0 ; object_array_index < answers.length ; object_array_index++ ) {
@@ -269,6 +285,7 @@ function render_stats ( stats ) {
 
 }
 
+// Check for the presence of a student's name. If no name, prompt for one.
 function check_quiz_student_name () {
     if ( document.getElementById('student_name_container' ) ) {
         console.log ( 'checking for email address...' ) ;
@@ -283,7 +300,8 @@ function check_quiz_student_name () {
 
 }
 
-function save_student_name () {
+// Save the student's name in localStorage.
+function save_student_name ( ) {
 
     // Is there a name saved in localStorage? If not, prompt the user to enter something.
     // If so, print the name and allow the user to edit it.
@@ -311,9 +329,62 @@ function save_student_name () {
 
 }
 
+// Set the student name on the webpage.
 function set_student_name () {
 
     document.getElementById('student_name').innerText = localStorage.student_name ;
+
+}
+
+// Update the answer tally.
+function update_answer_tally ( ) {
+    console.log('updating tally...');
+    db.collection("answers").where("quiz", "==", jQuery('#quiz_selector').val()).orderBy("question")
+    .onSnapshot(function(querySnapshot) {
+        let answers = [];
+        querySnapshot.forEach(function(doc) {
+            let question_answer = {
+                answer: doc.data().answer,
+                question: doc.data().question,
+                student: doc.data().student
+            } ;
+        
+            answers.push(question_answer);
+            // console.log("doc.id:",doc.id)
+        });
+
+        let answer_statistics = load_answers ( answers ) ;
+        render_quiz_stats ( answer_statistics ) ;
+
+    }) ;
+}
+
+function render_quiz_stats ( stats ) {
+
+    for ( let question_index = 0 ; question_index < stats.length ; question_index++ ) {
+        // stats_html.append('<h2>question ' + (question_index+1) + '</h2>');
+        // jQuery('<h2>question ' + (question_index+1) + '</h2>').appendTo('div#stats');
+        
+        // we'll assume we only have four possible answers for any given question, even true/false questions
+        for ( let answer_index = 0 ; answer_index < 4 ; answer_index++ ) {
+
+            let answer_counter = 0 ;
+            // loop through the items in the question_answers array
+            for ( let question_answers_index = 0 ; question_answers_index < stats[question_index].question_answers.length; question_answers_index++ ) {
+                // console.log ( question_index,"answer:",stats[question_index].question_answers[question_answers_index] );
+
+                if ( stats[question_index].question_answers[question_answers_index] == answer_index ) {
+                    answer_counter++ ;
+                }
+
+            }
+            jQuery('div.question_score' + question_index + '.answer_score' + answer_index ).html(answer_counter) ;
+            // stats_html.append("<p><strong>"+(answer_index+1)+":</strong> "+answer_counter+"</p>") ;
+
+        }
+
+    }
+
 
 }
 
