@@ -65,6 +65,10 @@ section#main div.quiz_body h3 a:hover, section#main div.quiz_body h3 a:focus {
     border-bottom: 2px solid #000 ;
 }
 
+section#main div.quiz_body h3 code {
+    font-weight: normal;
+}
+
 /* remove top margin from first question. */
 section#main div.quiz_body.q0 h3 {
     margin-top: 0 ;
