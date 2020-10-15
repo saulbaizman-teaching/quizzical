@@ -1,0 +1,135 @@
+{
+  "quizzes":
+  [
+    {
+      "quizname": "week five: color and the box model",
+      "questions":
+      [
+        {
+          "question_text": "the following are all valid color notations except...",
+          "question_type": "multiple_choice",
+          "answers":
+          [
+            { "answer_text": "rgb" },
+            { "answer_text": "hsl" },
+            { "answer_text": "hexadecimal" },
+            { "answer_text": "svg" }
+          ],
+          "correct_answer": "3",
+          "explanation": "Oh, acronyms! SVG is an image format. There's also a fourth notation. Do you remember what it is?"
+        },
+        {
+          "question_text": "the foreground and background color properties are, respectively...",
+          "question_type": "multiple_choice",
+          "answers":
+          [
+            { "answer_text": "<code>foreground-color</code> + <code>background-color</code>" },
+            { "answer_text": "<code>color</code> + <code>background-color</code>" },
+            { "answer_text": "<code>foreground-color</code> + <code>color</code>" },
+            { "answer_text": "<code>color</code> + <code>background</code>" }
+          ],
+          "correct_answer": "1",
+          "explanation": "See pages 249–250 in <em>HTML & CSS</em> for details."
+        },
+        {
+          "question_text": "true or false: every color on a computer screen is created by mixing amounts of red, green, and blue.",
+          "question_type": "boolean",
+          "answers":
+          [
+            { "answer_text": "true" },
+            { "answer_text": "false" }
+          ],
+          "correct_answer": "0",
+          "explanation": "See page 251 in <em>HTML & CSS</em> for details."
+        },
+        {
+          "question_text": "the box model encompasses the following properties:",
+          "question_type": "multiple_choice",
+          "answers":
+          [
+            { "answer_text": "<code>border</code>" },
+            { "answer_text": "<code>box-sizing</code>" },
+            { "answer_text": "<code>padding</code>" },
+            { "answer_text": "<code>margin</code>" }
+          ],
+          "correct_answer": "1",
+          "explanation": "If you read question 8, it gave this answer away! See page 307 in <em>HTML & CSS</em> for details."
+        },        
+        {
+          "question_text": "true or false: a background color is visible in an element’s margin.",
+          "question_type": "multiple_choice",
+          "answers":
+          [
+            { "answer_text": "true" },
+            { "answer_text": "false" }
+          ],
+          "correct_answer": "1",
+          "explanation": "Background colors are only visible in the space an element occupies and its padding. Margin is always whitespace, revealing any content <em>behind</em> it."
+        },
+        {
+          "question_text": "All of the following about borders are true except...",
+          "question_type": "multiple_choice",
+          "answers":
+          [
+            { "answer_text": "an element can have different borders on each of its sides" },
+            { "answer_text": "a border line can have one of multiple styles, including solid, dashed, and dotted lines" },
+            { "answer_text": "a border can incorporate an image in lieu of a line" },
+            { "answer_text": "a border can have its own padding" }
+          ],
+          "correct_answer": "3",
+          "explanation": "The “correct” answer makes no sense. An element can have padding, but a border does not have padding."
+        },
+        {
+          "question_text": "true or false: the <code>margin</code> property can have positive and negative values.",
+          "question_type": "multiple_choice",
+          "answers":
+          [
+            { "answer_text": "true" },
+            { "answer_text": "false" }
+          ],
+          "correct_answer": "0",
+          "explanation": "True! <code>margin</code> can have negative values, but <code>padding</code> cannot."
+        },
+        {
+          "question_text": "what is the sequence of box model properties, from interior to exterior?",
+          "question_type": "multiple_choice",
+          "answers":
+          [
+            { "answer_text": "element, padding, margin, border" },
+            { "answer_text": "element, padding, border, margin" },
+            { "answer_text": "element, border, padding, margin" },
+            { "answer_text": "element, margin, border, padding" }
+          ],
+          "correct_answer": "1",
+          "explanation": "Here’s a diagram of the box model:<br><img src='img/box-model.png' width='75%'><br>See page 307 in <em>HTML & CSS</em> for details."
+        },
+        {
+          "question_text": "To horizontally center a child element, use the following css declarations in the parent element:",
+          "question_type": "multiple_choice",
+          "answers":
+          [
+            { "answer_text": "<code>margin-left: auto; margin-right: auto;</code>" },
+            { "answer_text": "<code>margin-left: 50%; margin-right: 50%;</code>" },
+            { "answer_text": "<code>margin-left: 10%; margin-right: 10%;</code>" },
+            { "answer_text": "<code>margin-left: center; margin-right: center;</code>" }
+          ],
+          "correct_answer": "0",
+          "explanation": "See page 315 in <em>HTML & CSS</em> for details."
+        },
+        {
+          "question_text": "The <code>display</code> property can take any of the following values except...",
+          "question_type": "multiple_choice",
+          "answers":
+          [
+            { "answer_text": "<code>inline</code>" },
+            { "answer_text": "<code>block</code>" },
+            { "answer_text": "<code>inline-block</code>" },
+            { "answer_text": "<code>invisible</code>" }
+          ],
+          "correct_answer": "3",
+          "explanation": "See page 317 in <em>HTML & CSS</em> for details."
+        }
+      ]
+    }
+  ]
+}
