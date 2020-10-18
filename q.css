@@ -50,7 +50,8 @@ section#main div#student_name_container {
 section#main div.quiz_body h3 {
     margin-top: 40px ;
     margin-bottom: 10px ;
-    line-height: 1.5em;
+    line-height: 1.5em ;
+    width: 50% ;
 }
 
 section#main div.quiz_body h3 a {
