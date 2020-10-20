@@ -1,0 +1,142 @@
+{
+  "quizzes":
+  [
+    {
+      "quizname": "week six: typography and css3",
+      "questions":
+      [
+        {
+          "question_text": "the css property responsible for setting an element’s typeface is...",
+          "question_type": "multiple_choice",
+          "answers":
+          [
+            { "answer_text": "font-face" },
+            { "answer_text": "font-family" },
+            { "answer_text": "type-face" },
+            { "answer_text": "type-family" }
+          ],
+          "correct_answer": "1",
+          "explanation": "See page 273 in <em>HTML & CSS</em> for details."
+        },
+        {
+          "question_text": "a common unit of measure for type on the web is not...",
+          "question_type": "multiple_choice",
+          "answers":
+          [
+            { "answer_text": "pixels" },
+            { "answer_text": "percentages" },
+            { "answer_text": "ems" },
+            { "answer_text": "picas" }
+          ],
+          "correct_answer": "3",
+          "explanation": "See page 274 in <em>HTML & CSS</em> for details."
+        },
+        {
+          "question_text": "kerning is to <code>letter-spacing</code> as leading is to _______.",
+          "question_type": "multiple_choice",
+          "answers":
+          [
+            { "answer_text": "<code>leading</code>" },
+            { "answer_text": "<code>line-height</code>" },
+            { "answer_text": "<code>space-after</code>" },
+            { "answer_text": "<code>line-spacing</code>" }
+          ],
+          "correct_answer": "1",
+          "explanation": "The only valid CSS property is the correct answer, <code>line-height</code>. None of the other properties exist. See page 283 in <em>HTML & CSS</em> for details."
+        },
+        {
+          "question_text": "true or false: <code>:first-line</code> is an example of a pseudo-selector.",
+          "question_type": "boolean",
+          "answers":
+          [
+            { "answer_text": "true" },
+            { "answer_text": "false" }
+          ],
+          "correct_answer": "1",
+          "explanation": "It’s an example of a <strong>pseudo-element</strong>. A pseudo-element acts like an extra element is in the code. See page 289 in <em>HTML & CSS</em> for details."
+        },
+        {
+          "question_text": "how many link states can be styled?",
+          "question_type": "multiple_choice",
+          "answers":
+          [
+            { "answer_text": "2" },
+            { "answer_text": "3" },
+            { "answer_text": "4" },
+            { "answer_text": "5" }
+          ],
+          "correct_answer": "3",
+          "explanation": "<code>:link</code>, <code>:visited</code>, <code>:hover</code>, <code>:active</code>, and <code>:focus</code>. See pages 290–291 in <em>HTML & CSS</em> for details."
+        },        
+        {
+          "question_text": "The following are all valid attribute selectors except...",
+          "question_type": "multiple_choice",
+          "answers":
+          [
+            { "answer_text": "<code>p[class=\"whatever\"]</code>" },
+            { "answer_text": "<code>div[class~=\"wherever\"]</code>" },
+            { "answer_text": "<code>img[attr^\"src\"]</code>" },
+            { "answer_text": "<code>section[attr*$\"width\"]</code>" }
+          ],
+          "correct_answer": "3",
+          "explanation": "See page 292 in <em>HTML & CSS</em> for details."
+        },
+        {
+          "question_text": "the following css properties can have transitions except...",
+          "question_type": "multiple_choice",
+          "answers":
+          [
+            { "answer_text": "opacity" },
+            { "answer_text": "font-size" },
+            { "answer_text": "color" },
+            { "answer_text": "display" }
+          ],
+          "correct_answer": "3",
+          "explanation": "Virtually all properties whose values are numeric can be animated (a handy time to remember that colors can be represented numerically). The values for <code>display</code> are not numeric."
+        },
+        {
+          "question_text": "according to dan cederholm, animation on the web should be used...",
+          "question_type": "multiple_choice",
+          "answers":
+          [
+            { "answer_text": "appropriately" },
+            { "answer_text": "annoyingly" },
+            { "answer_text": "abundantly" },
+            { "answer_text": "sparingly" }
+          ],
+          "correct_answer": "0",
+          "explanation": "“Like all shiny new tools, it’s important to use transitions <em>appropriately</em>. One can easily go overboard adding transitions to everything on the page, resulting in some sort of annoying, pulsating monster. It’s key to decide where transitions rightfully enrich the user experience and when they are just extraneous noise.” –Dan Cederholm, <em>CSS3 for Web Designers</em>, page 26"
+        },
+        {
+          "question_text": "the css snippet below... <blockquote><code>p { <br>color: brown;<br> transition: color .3s ease ; <br>}</code></blockquote> ...will do what when someone hovers over a hypothetical paragraph element?",
+          "question_type": "multiple_choice",
+          "answers":
+          [
+            { "answer_text": "turn the text brown over the course of 3 seconds" },
+            { "answer_text": "turn the text brown over the course of 300 milliseconds" },
+            { "answer_text": "nothing" },
+            { "answer_text": "we don’t know what it will do" }
+          ],
+          "correct_answer": "2",
+          "explanation": "In order for something to happen, we would need to define a second rule for the hover state: <code>p:hover { ... }</code>. We would have to add a declaration with the <code>color</code> property to change the color, which it would do over the course of 300 milliseconds per the first rule. <br><br>Note that transitions are assigned to the <strong>mouse-off state</strong> rule, not the hover state rule."
+        },
+        {
+          "question_text": "all of the following capabilities were introduced in CSS3 except...",
+          "question_type": "multiple_choice",
+          "answers":
+          [
+            { "answer_text": "animation (through the <code>transition</code> property and <code>@keyframe</code> rules)" },
+            { "answer_text": "media queries (for responsive design)" },
+            { "answer_text": "multiple background images" },
+            { "answer_text": "a new layout engine (CSS grid)" },
+            { "answer_text": "nifty new selectors" },
+            { "answer_text": "more sophisticated typographic effects" },
+            { "answer_text": "time travel" }
+          ],
+          "correct_answer": "6",
+          "explanation": "CSS3 was crammed with so much goodness that the makers decided to wait until CSS4 to include the ability to travel through time (DeLorean style, of course)."
+        }
+      ]
+    }
+  ]
+}
