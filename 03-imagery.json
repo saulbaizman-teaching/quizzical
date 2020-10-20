@@ -18,7 +18,7 @@
           "explanation": "The <a target='_blank' href='https://en.wikipedia.org/wiki/BMP_file_format'>Windows bitmap (BMP) format</a> is an uncompressed format that will not be rendered by a web browser."
         },
         {
-          "question_text": "true or false: an <img> element is a block-level element.",
+          "question_text": "true or false: an &lt;img&gt; element is a block-level element.",
           "answers":
           [
             { "answer_text": "true" },
@@ -62,7 +62,7 @@
           "explanation": "This is why the web uses &ldquo;lossy&rdquo; formats that compress imagery and squeeze out as much unnecessary information as possible."
         },
         {
-          "question_text": "to make imagery accessible to the visually impaired, add the ______ attribute to the <img> tag.",
+          "question_text": "to make imagery accessible to the visually impaired, add the ______ attribute to the &lt;img&gt; tag.",
           "answers":
           [
             { "answer_text": "title" },
