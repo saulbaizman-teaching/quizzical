@@ -51,7 +51,7 @@
             { "answer_text": "false" }
           ],
           "correct_answer": "1",
-          "explanation": "Background colors are only visible in the space an element occupies and its padding. Margin is always whitespace, revealing any content <em>behind</em> it."
+          "explanation": "Background colors are only visible in the space an element occupies and its padding. Margin is always transparent, revealing any content <em>behind</em>, or under, it."
         },
         {
           "question_text": "the box model encompasses the following properties except:",
