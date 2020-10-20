@@ -154,7 +154,23 @@ jQuery(document).ready ( function ( ) {
         // console.log ('answered_question_count:',answered_question_count) ;
         // console.log('total_question_count:',total_question_count) ;
         if ( answered_question_count == total_question_count ) {
-            jQuery('section#main').append ('<p class="summary">You got ' + correct_answer_count + ' out of ' + total_question_count + ' questions correct. Hooray!</p>') ;
+            let message = 'You got ' + correct_answer_count + ' out of ' + total_question_count + ' questions correct.' ;
+            // Less than or equal to 50%.
+            if ( correct_answer_count <= ( total_question_count/2 ) ) {
+                message += ' Please message Saul to talk.' ;
+            }
+
+            // Better than 50% but not perfect.
+            if ( ( correct_answer_count > ( total_question_count/2 ) ) && ( correct_answer_count != total_question_count ) ) {
+                message += ' Whoa! You must be, like, wicked smaht.' ;
+            }
+
+            // Perfect score.
+            if ( correct_answer_count == total_question_count) {
+                message += ' Sweet, a perfect score!' ;
+            }
+
+            jQuery('section#main').append ('<p class="summary">' + message + '</p>') ;
             jQuery('body')[0].scrollIntoView(false);
             if ( play_sound ) {
                 if ( ( correct_answer_count/total_question_count) > .5 ) {
