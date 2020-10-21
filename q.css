@@ -28,6 +28,7 @@ section#main {
     margin-right: auto ;
     border-radius: 5px;
     box-shadow: rgba(230,230,230,1) 0px 1px 10px 10px;
+    overflow: hidden ;
 }
 
 section#main h1 {
@@ -48,17 +49,25 @@ section#main div#student_name_container {
 }
 
 section#main div.quiz_body h3 {
-    margin-top: 40px ;
-    margin-bottom: 10px ;
+    /* margin-top: 40px ; */
+    margin-top: 0 ;
+    /* margin-bottom: -70px ; */
     line-height: 1.5em ;
     width: 50% ;
+    align-self: center ;
+
+}
+section#main div.quiz_body > h3 {
+    margin-top: -5px ;
+    /* margin-left: -10px ; */
+    margin-top: 100px ;
 }
 
 section#main div.quiz_body h3 a {
     color: rgba(0,0,0,1);
     text-decoration: none ;
     border-bottom: 2px solid #ccc ;
-    transition: border-bottom .3s ease;
+    transition: border-bottom .2s ease;
     padding-bottom: 2px ;
 }
 
@@ -72,7 +81,7 @@ section#main div.quiz_body h3 code {
 
 /* remove top margin from first question. */
 section#main div.quiz_body.q0 h3 {
-    margin-top: 0 ;
+    /* margin-top: 0 ; */
 }
 
 section#main div.quiz_body {
@@ -83,7 +92,21 @@ section#main div.quiz_body {
 section#main div.quiz_body .question_number {
     text-align: right;
     padding-right: 7px;
+    color: rgb(255,192,203,.3);
+    font-size: 7em ;
+    height: 165px ;
 }
+
+section#main div.quiz_body .question_number h3 {
+    transform: rotate(90deg) scale(2);
+    /* transform: rotate(0deg) scale(1); */
+    transition: transform .2s ease ;
+}
+/*
+section#main div.quiz_body .question_number h3:hover {
+    transform: rotate(90deg) scale(2) ;
+}
+*/
 
 section#main div.answers {
     display: grid;
@@ -94,14 +117,17 @@ section#main div.answers {
 section#main div.answers div.answer {
     margin: 10px 0 ;
     padding: 20px 20px ;
-    background-color: #eee;
+    /* background-color: #eee; */
+    background-color: rgba(230,230,230,.75);
     border-radius: 5px;
     width: 500px ;
     /*box-sizing: border-box ;*/
     /*transition: background-color,box-shadow .25s ease ;*/
-    transition: all .3s ease ;
+    transition: all .2s ease ;
     border: 2px solid #fff ;
     line-height: 1.6em ;
+    position: relative ;
+    z-index: 2 ;
 }
 
 section#main div.answers div.hover {
@@ -138,13 +164,15 @@ section#main div.answers div.icon.incorrect {
 section#main div.answers div.correct_answer_not_selected {
     /*border: 2px solid #3EAE1A ;*/
     /*https://www.tutorialrepublic.com/faq/how-to-place-border-inside-of-div-element-using-css.php*/
-    box-shadow: inset 0px 0px 0px 3px #3EAE1A;
+    box-shadow: inset 0px 0px 0px 2px #3EAE1A;
+    /* background-color: #fff ; */
+    background-color: rgb(236,247,233);
 }
 
 section#main div.answer_score {
     margin: 10px 0 ;
     padding: 20px 10px 20px 0px;
-    border: 2px solid #fff ;
+    border: 2px solid rgba(255,255,255,0) ;
     line-height: 1.6em ;
     color: #bbb ;
     font-size: 0.9em ;
@@ -167,7 +195,7 @@ section#main div.explanation a {
     text-decoration: none;
     border-bottom: 2px solid #ccc ;
     padding-bottom: 1px ;
-    transition: border-bottom .3s ease ;
+    transition: border-bottom .2s ease ;
 }
 section#main div.explanation a:hover,
 section#main div.explanation a:focus {
