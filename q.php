@@ -23,7 +23,7 @@
     if ( isset ( $_GET['quiz'] ) ) :
 
     if ( ! file_exists($_GET['quiz'] . '.json') ) {
-        printf ('<p>Sorry, no quiz by the name <strong>%s</strong>!</p>', $_GET['quiz']) ;
+        printf ('<p>Sorry, no quiz by the name <strong>%s</strong> exists!</p>', $_GET['quiz']) ;
 	    print_footer ();
 	    die() ;
     }
