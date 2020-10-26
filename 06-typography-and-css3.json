@@ -75,8 +75,8 @@
           [
             { "answer_text": "<code>p[class=\"whatever\"]</code>" },
             { "answer_text": "<code>div[class~=\"wherever\"]</code>" },
-            { "answer_text": "<code>img[attr^\"src\"]</code>" },
-            { "answer_text": "<code>section[attr*$\"width\"]</code>" }
+            { "answer_text": "<code>img[attr^=\"src\"]</code>" },
+            { "answer_text": "<code>section[attr*$=\"width\"]</code>" }
           ],
           "correct_answer": "3",
           "explanation": "The first option is called an equality selector. The second option is called a space selector. The third option is called a prefix selector. See page 292 in <em>HTML & CSS</em> for what they do."
