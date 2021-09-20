@@ -70,7 +70,7 @@
           "correct_answer": "0"
         },
         {
-          "question_text": "the best tag to use for a quotation is...",
+          "question_text": "the best tag to use for a long quotation is...",
           "answers":
           [
             { "answer_text": "<code>&lt;q&gt;</code>" },
@@ -78,7 +78,8 @@
             { "answer_text": "<code>&lt;quotation&gt;</code>" },
             { "answer_text": "<code>&lt;blockquote&gt;</code>" }
           ],
-          "correct_answer": "3"
+          "correct_answer": "3",
+          "explanation":"<code>&lt;q&gt;</code> is a valid tag for brief inline quotes. The other two answers aren't valid tags."
         },
         {
           "question_text": "which of the following is NOT a valid html tag?",
@@ -92,17 +93,6 @@
           "correct_answer": "1"
         },
         {
-          "question_text": "html5 was released in...",
-          "answers":
-          [
-            { "answer_text": "1992" },
-            { "answer_text": "1996" },
-            { "answer_text": "2000" },
-            { "answer_text": "2004" }
-          ],
-          "correct_answer": "2"
-        },
-        {
           "question_text": "elements that start on a new line in the browser window are known as _____-level elements.",
           "answers":
           [
@@ -112,6 +102,16 @@
             { "answer_text": "block" }
           ],
           "correct_answer": "3"
+        },
+        {
+          "question_text": "true or false: the term &ldquo;universal design&rdquo; was coined by architect Ronald L. Mace.",
+          "answers":
+          [
+            { "answer_text": "true" },
+            { "answer_text": "false" }
+          ],
+          "correct_answer": "0",
+          "explanation": "<p><img src='https://projects.ncsu.edu/ncsu/design/cud/about_us/images/ron_mace.gif' width='180' height='259' alt='ron mace | from the nc state university website' title='ron mace | from the nc state university website'></p> <p><em><strong>Universal design</strong> is the design of products and environments to be usable by all people, to the greatest extent possible, without the need for adaptation or specialized design.</em></p> <p>Read more about the life of Ron Mace (1941&ndash;1998) on <a href='https://projects.ncsu.edu/ncsu/design/cud/about_us/usronmace.htm' target='_blank'>the NC State University website</a>.</p>"
         }
       ]
     }
