@@ -67,7 +67,7 @@
           [
             { "answer_text": "title" },
             { "answer_text": "alt" },
-            { "answer_text": "access" },
+            { "answer_text": "accessible" },
             { "answer_text": "screenreader" }
           ],
           "correct_answer": "1",
