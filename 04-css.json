@@ -51,17 +51,6 @@
           "correct_answer": "2"
         },
         {
-          "question_text": "which of the following statements is false?",
-          "answers":
-          [
-            { "answer_text": "an element can be assigned both a class and an ID" },
-            { "answer_text": "an element can be assigned multiple classes" },
-            { "answer_text": "an element can be assigned multiple IDs" }
-          ],
-          "correct_answer": "2",
-          "explanation": "It’s true: an element can have one or more classes assigned to it <strong>and</strong> have an ID assigned to it, too. (This is similar to the previous question but not quite.)"
-        },
-        {
           "question_text": "you can include css styles in a webpage through all of the following methods except...",
           "answers":
           [
@@ -89,9 +78,9 @@
           "question_text": "the cascade obeys the following rules except...",
           "answers":
           [
-            { "answer_text": "when two selectors are the same, the last rule wins" },
+            { "answer_text": "when rules with identical selectors define the same property, the last rule wins" },
             { "answer_text": "a more specific selector overrides a less specific selector" },
-            { "answer_text": "when two selectors are the same, an identical property's value can be manually overridden by suffixing it with “!important”" },
+            { "answer_text": "when rules with identical selectors define the same property, the property’s value can be manually overridden by suffixing it with “!important”" },
             { "answer_text": "a less specific selector inherits the properties of a more specific selector" }
           ],
           "correct_answer": "3",
@@ -118,6 +107,20 @@
           ],
           "correct_answer": "0",
           "explanation": "Uh, it’s true: <a href='https://caniuse.com/' target='_blank' rel='noopener'>caniuse.com</a> is an excellent website to consult when you need to know whether a CSS property is supported by a specific version of a specific web browser. If you’re done with the quiz, <a href='https://caniuse.com/' target='_blank' rel='noopener'>check it out right now!</a>"
+        },
+        {
+          "question_text": "building accessibility into your project from the beginning has many benefits. those benefits include...",
+          "answers":
+          [
+            { "answer_text": "increasing the findability of information and ease of use" },
+            { "answer_text": "broadening the appeal of the site and thereby increasing its potential audience" },
+            { "answer_text": "lowering costs" },
+            { "answer_text": "providing legal protection from lawsuits" },
+            { "answer_text": "doing the right thing" },
+            { "answer_text": "seriously? all of the above" }
+          ],
+          "correct_answer": "5",
+          "explanation": "See pages 38–39 in <em>Accessiblity for All</em> by Laura Kalbag for more details."
         }
       ]
     }
