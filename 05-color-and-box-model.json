@@ -13,10 +13,11 @@
             { "answer_text": "rgb" },
             { "answer_text": "hsl" },
             { "answer_text": "hexadecimal" },
-            { "answer_text": "cmyk" }
+            { "answer_text": "cmyk" },
+            { "answer_text": "english names" }
           ],
           "correct_answer": "3",
-          "explanation": "Oh, acronyms! CMYK is for print, not screen, output. There's also a fourth notation. Do you remember what it is?"
+          "explanation": "Oh, acronyms! CMYK is for print, not screen, output."
         },
         {
           "question_text": "true or false: every color on a computer screen is created by mixing amounts of red, green, and blue.",
@@ -30,14 +31,14 @@
           "explanation": "See page 251 in <em>HTML & CSS</em> for details."
         },
         {
-          "question_text": "the foreground and background color properties are, respectively...",
+          "question_text": "in css, the foreground and background color properties are, respectively...",
           "question_type": "multiple_choice",
           "answers":
           [
-            { "answer_text": "<code>foreground-color</code> + <code>background-color</code>" },
-            { "answer_text": "<code>color</code> + <code>background-color</code>" },
-            { "answer_text": "<code>foreground-color</code> + <code>color</code>" },
-            { "answer_text": "<code>color</code> + <code>background</code>" }
+            { "answer_text": "<code>foreground-color</code> and <code>background-color</code>" },
+            { "answer_text": "<code>color</code> and <code>background-color</code>" },
+            { "answer_text": "<code>foreground-color</code> and <code>color</code>" },
+            { "answer_text": "<code>color</code> and <code>background</code>" }
           ],
           "correct_answer": "1",
           "explanation": "See pages 249–250 in <em>HTML & CSS</em> for details."
@@ -64,7 +65,7 @@
             { "answer_text": "<code>margin</code>" }
           ],
           "correct_answer": "1",
-          "explanation": "The <code>box-sizing</code> property name is a red herring. See page 307 in <em>HTML & CSS</em> for details."
+          "explanation": "The <code>box-sizing</code> property name is a red herring. See page 307 in <em>HTML & CSS</em> for details. <a href='https://www.w3schools.com/css/css3_box-sizing.asp' target='_blank'>Learn more about the box-sizing property</a>."
         },        
         {
           "question_text": "all of the following about borders are true except...",
@@ -77,7 +78,7 @@
             { "answer_text": "a border can have its own padding" }
           ],
           "correct_answer": "3",
-          "explanation": "The “correct” answer makes no sense. An element can have padding, but a border does not have padding."
+          "explanation": "The “correct” answer makes no sense. An <em>element</em> can have padding, but a border does not have padding."
         },
         {
           "question_text": "true or false: the <code>margin</code> property can have positive and negative values.",
@@ -88,7 +89,7 @@
             { "answer_text": "false" }
           ],
           "correct_answer": "0",
-          "explanation": "True! <code>margin</code> can have negative values, but <code>padding</code> cannot. This is useful for slightly overlapping elements."
+          "explanation": "Strange but true! <code>margin</code> can have negative values, but <code>padding</code> cannot. This is useful for making elements slightly overlap one another."
         },
         {
           "question_text": "what is the sequence of box model properties, from interior to exterior?",
@@ -101,7 +102,7 @@
             { "answer_text": "element, margin, border, padding" }
           ],
           "correct_answer": "1",
-          "explanation": "Here’s a diagram of the box model:<br><img src='img/box-model.png' width='75%'><br>See page 307 in <em>HTML & CSS</em> for details."
+          "explanation": "Here’s a diagram of the box model:<br><img src='img/box-model.png' width='75%'><br>See page 307 in <em>HTML & CSS</em> for details. (Note that the colors in the diagram correspond to the colors visible in the web inspector.)"
         },
         {
           "question_text": "to horizontally center a child element, use the following css declarations in the parent element:",
@@ -114,20 +115,21 @@
             { "answer_text": "<code>margin-left: center; margin-right: center;</code>" }
           ],
           "correct_answer": "0",
-          "explanation": "See page 315 in <em>HTML & CSS</em> for details."
+          "explanation": "See page 315 in <em>HTML & CSS</em> for details. For whatever reason, center-aligning elements in CSS is often a pain. I often consult <a href='https://css-tricks.com/centering-css-complete-guide/' target='_blank'>this webpage on CSS Tricks</a>. Bookmark it!"
         },
         {
-          "question_text": "the <code>display</code> property can take any of the following values except...",
+          "question_text": "we can focus on the usability of the web across several domains, including:",
           "question_type": "multiple_choice",
           "answers":
           [
-            { "answer_text": "<code>inline</code>" },
-            { "answer_text": "<code>block</code>" },
-            { "answer_text": "<code>inline-block</code>" },
-            { "answer_text": "<code>invisible</code>" }
+            { "answer_text": "visual: make it easy to see." },
+            { "answer_text": "auditory: make it easy to hear." },
+            { "answer_text": "motor: make it easy to interact with." },
+            { "answer_text": "cognitive: make it easy to understand." },
+            { "answer_text": "dude, c’mon. all of the above." }
           ],
-          "correct_answer": "3",
-          "explanation": "There's a <code>visibility</code> property in CSS, but even <strong>invisible</strong> isn't one of its valid values! See page 317 in <em>HTML & CSS</em> for details."
+          "correct_answer": "4",
+          "explanation": "See page 51 in <em>Accessiblity for Everyone</em> by Laura Kalbag for more details."
         }
       ]
     }
