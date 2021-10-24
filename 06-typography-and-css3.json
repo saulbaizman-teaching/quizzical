@@ -29,7 +29,7 @@
             { "answer_text": "picas" }
           ],
           "correct_answer": "3",
-          "explanation": "See page 274 in <em>HTML & CSS</em> for details."
+          "explanation": "Picas <em>can</em> be used in CSS, but they're primarily used in the context of print. See page 274 in <em>HTML & CSS</em> for details. (Did you know you can use CSS to specially format a webpage for print? Many websites include a separate stylesheet with rules to format a page for a printer. It might, for example, hide advertisements or navigational elements. <a href='https://www.w3schools.com/cssref/css3_pr_mediaquery.asp' target='_blank'>Learn more about the @media rule.</a>)"
         },
         {
           "question_text": "kerning is to <code>letter-spacing</code> as leading is to _______.",
@@ -42,7 +42,7 @@
             { "answer_text": "<code>line-spacing</code>" }
           ],
           "correct_answer": "1",
-          "explanation": "There is only one valid CSS property among the mix, <code>line-height</code>. Yes, it’s weird there’s no property named <code>leading</code>, but that’s the way the CSS cookie crumbles. Also note that there’s no concept of “space after” a paragraph; this is accomplished by adding bottom margin to paragraph elements. See page 283 in <em>HTML & CSS</em> for details."
+          "explanation": "There is only one valid CSS property among the mix, <code>line-height</code>. Yes, it’s weird there’s no property named <code>leading</code>, but that’s the way the CSS cookie crumbles. Also note that there’s no concept of “space after” a paragraph; this is accomplished by setting <code>margin-bottom</code> to paragraph elements. See page 283 in <em>HTML & CSS</em> for details."
         },
         {
           "question_text": "true or false: <code>:first-line</code> is an example of a pseudo-class.",
@@ -56,7 +56,7 @@
           "explanation": "It’s an example of a <strong>pseudo-element</strong>. A pseudo-element acts like an extra element is in the code. A pseudo-class, on the other hand, selects elements that are in a specific state. Unfortunately, both are written with a single preceding colon, even though they are different. In newer versions of the CSS specification, pseudo-elements are written with <em>two</em> preceding colons, as in <code>::first-line</code>. (<a href='https://css-tricks.com/to-double-colon-or-not-do-double-colon/' target='_blank'>Here’s a good summary of the one- vs. two-colon situation.</a>) <a href='https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements' target='_blank'>View the differences between pseudo-elements and pseudo-classes here</a>. See also page 289 in <em>HTML & CSS</em>.<br><br>My favorite pseudo-elements are <code>::before</code> and <code>::after</code>, especially when combined with <a href='https://css-tricks.com/css-content/' target='_blank'>the content property</a>."
         },
         {
-          "question_text": "how many link states can be styled?",
+          "question_text": "how many hyperlink states can be styled?",
           "question_type": "multiple_choice",
           "answers":
           [
@@ -66,21 +66,8 @@
             { "answer_text": "5" }
           ],
           "correct_answer": "3",
-          "explanation": "Dude, you can style up to <em>five</em> states: <code>:link</code> (an unvisited link), <code>:visited</code> (a visited link), <code>:hover</code> (mousing over), <code>:active</code> (mouse clicking), and <code>:focus</code> (keyboard focus). See pages 290–291 in <em>HTML & CSS</em> for details."
+          "explanation": "Dude, you can style up to <em>five</em> states: <code>:link</code> (an unvisited link), <code>:visited</code> (a visited link), <code>:hover</code> (mousing over), <code>:active</code> (mouse clicking), and <code>:focus</code> (keyboard focus, accomplished by tabbing to the element). See pages 290–291 in <em>HTML & CSS</em> for details."
         },        
-        {
-          "question_text": "The following are all valid attribute selectors except...",
-          "question_type": "multiple_choice",
-          "answers":
-          [
-            { "answer_text": "<code>p[class=\"whatever\"]</code>" },
-            { "answer_text": "<code>div[class~=\"wherever\"]</code>" },
-            { "answer_text": "<code>img[attr^=\"src\"]</code>" },
-            { "answer_text": "<code>section[attr*$=\"width\"]</code>" }
-          ],
-          "correct_answer": "3",
-          "explanation": "The first option is called an equality selector. The second option is called a space selector. The third option is called a prefix selector. See page 292 in <em>HTML & CSS</em> for what they do."
-        },
         {
           "question_text": "the following css properties can have transitions except...",
           "question_type": "multiple_choice",
@@ -118,7 +105,7 @@
             { "answer_text": "we don’t know what it will do" }
           ],
           "correct_answer": "2",
-          "explanation": "In order for something to happen, we would need to define a second rule for the hover state: <code>p:hover { ... }</code>. We would have to add a declaration with the <code>color</code> property to change the color, which it would do over the course of 300 milliseconds per the first rule. <br><br>Note that transitions are assigned to the <strong>mouse-off state</strong> rule, not the hover state rule."
+          "explanation": "In order for something to happen, we would need to define a second rule for the hover state: <code>p:hover { ... }</code>. We would have to add a declaration with the <code>color</code> property to change the color, which it would do over the course of 300 milliseconds per the first rule. <br><br>Note that transitions are assigned to the <strong>mouse-off state</strong> rule, not the hover state rule. This is important so that a property may transition to <em>and</em> from a given value."
         },
         {
           "question_text": "all of the following capabilities were introduced in CSS3 except...",
@@ -135,6 +122,19 @@
           ],
           "correct_answer": "6",
           "explanation": "CSS3 was crammed with so much goodness that the makers decided to wait until CSS4 to include the ability to travel through time (DeLorean style, of course).<br><img src='img/delorean.jpg' alt='DeLorean' title='DeLorean' width='100%'>"
+        },
+        {
+          "question_text": "according to laura kalbag, “_________ is the secret weapon of web accessibility.”",
+          "question_type": "multiple_choice",
+          "answers":
+          [
+            { "answer_text": "well-structured html" },
+            { "answer_text": "usability" },
+            { "answer_text": "navigability" },
+            { "answer_text": "empathy" }
+          ],
+          "correct_answer": "0",
+          "explanation": "According to Kalbag, it's “well-structured html.” See page 90 in <em>Accessibility for Everyone</em>. The other items are pretty important to accessibility, too, but that's not what Laura Kalbag wrote in her book."
         }
       ]
     }
