@@ -12,10 +12,11 @@
             { "answer_text": "jpeg" },
             { "answer_text": "png" },
             { "answer_text": "svg" },
+            { "answer_text": "webp" },
             { "answer_text": "bmp" }
           ],
-          "correct_answer": "3",
-          "explanation": "The <a target='_blank' href='https://en.wikipedia.org/wiki/BMP_file_format'>Windows bitmap (BMP) format</a> is an uncompressed format that will not be rendered by a web browser."
+          "correct_answer": "4",
+          "explanation": "The <a target='_blank' href='https://en.wikipedia.org/wiki/BMP_file_format'>Windows bitmap (BMP) format</a> is an uncompressed format that will not be rendered in a web browser."
         },
         {
           "question_text": "true or false: an &lt;img&gt; element is a block-level element.",
@@ -80,10 +81,10 @@
             { "answer_text": "as quickly as if it were resized to 100px by 100px" },
             { "answer_text": "one-fifth as quickly as if it were resized to 100px by 100px" },
             { "answer_text": "as long as a 5 megabyte file takes to load" },
-            { "answer_text": "one hundred times faster than with its original dimensions" }
+            { "answer_text": "one hundred times faster than its original dimensions" }
           ],
           "correct_answer": "2",
-          "explanation": "This question does not require mathematical reasoning. Resizing an image in an image editor changes a file's size on disk. Setting the width and height attributes on a webpage only changes the size at which the image appears in the browser. A 5MB image will take the same amount of time to load regardless of the width and height attributes. Therefore, always properly resize imagery!"
+          "explanation": "This question is misleading and does not require mathematical reasoning. Resizing an image's dimensions in an image editor changes a file's size on disk. Setting the width and height attributes in an &lt;img&gt; tag only changes the size at which the image appears in the browser; the file's size on disk stays the same. Therefore, a 5MB image will take the same amount of time to load regardless of the width and height attributes. Therefore, always properly resize imagery!"
         },
         {
           "question_text": "the GIF format was created by which internet service provider?",
@@ -107,13 +108,13 @@
             { "answer_text": "a bird pooping on another bird" }
           ],
           "correct_answer": "0",
-          "explanation": "As we all know, babies and animals (especially cats) rule the web. But <a target='_blank' href='https://en.wikipedia.org/wiki/Dancing_baby'>the Oogachacka Baby</a> got there first in the late 1990s.<br><img src='img/dancing-baby.gif' alt='dancing-baby.gif'>"
+          "explanation": "As we all know, babies and animals (and especially baby animals) rule the web. But <a target='_blank' href='https://en.wikipedia.org/wiki/Dancing_baby'>the Oogachacka Baby</a> got there first in the late 1990s.<br><img src='img/dancing-baby.gif' alt='dancing-baby.gif'>"
         },
         {
           "question_text": "“gif” is pronounced with a...",
           "answers":
           [
-            { "answer_text": "soft G, as in “general”" },
+            { "answer_text": "soft G, as in “gene”" },
             { "answer_text": "hard G, as in “good”" }
           ],
           "correct_answer": "2"
