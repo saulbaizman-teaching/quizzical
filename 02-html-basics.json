@@ -111,7 +111,7 @@
             { "answer_text": "false" }
           ],
           "correct_answer": "0",
-          "explanation": "<p><img src='https://projects.ncsu.edu/ncsu/design/cud/about_us/images/ron_mace.gif' width='180' height='259' alt='ron mace | from the nc state university website' title='ron mace | from the nc state university website'></p> <p><em><strong>Universal design</strong> is the design of products and environments to be usable by all people, to the greatest extent possible, without the need for adaptation or specialized design.</em></p> <p>Read more about the life of Ron Mace (1941&ndash;1998) on <a href='https://projects.ncsu.edu/ncsu/design/cud/about_us/usronmace.htm' target='_blank'>the NC State University website</a>.</p>"
+          "explanation": "<p><img src='img/ron_mace.gif' width='180' height='259' alt='ron mace | from the nc state university website' title='ron mace | from the nc state university website'></p><p><em><strong>Universal design</strong> is the design of products and environments to be usable by all people, to the greatest extent possible, without the need for adaptation or specialized design.</em></p> <p>Read more about <a href='https://www.britannica.com/biography/Ronald-L-Mace' target='_blank'>the life of Ron Mace</a> (1941&ndash;1998).</p>"
         }
       ]
     }
