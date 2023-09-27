@@ -1,0 +1,24 @@
+name: Deploy files to DreamHost
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["production"]
+
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: delete unnecessary files
+      run: rm -f README.md
+    - name: transfer files via scp
+      uses: appleboy/scp-action@v0.1.4
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        port: ${{ secrets.SSH_PORT }}
+        key: ${{ secrets.SSH_KEY }}
+        source: "./*"
+        target: ${{ secrets.SSH_PATH }}
