@@ -26,8 +26,8 @@
             { "answer_text": "interaction + behavior" }
           ],
           "correct_answer": "2",
-          "explanation": "In the metaphorical layer cake of front-end web technologies, CSS is in the middle and governs appearance and layout (presentation). JavaScript is responsible for interaction and behavior. To refresh your memory, here again is the web cake:<br><br><img src='img/web-cake.png' width='240' height='154' alt='dancing-baby.gif'>"
-        },        
+          "explanation": "In the metaphorical layer cake of front-end web technologies, CSS is in the middle and governs appearance and layout (presentation). JavaScript is responsible for interaction and behavior. To refresh your memory, here again is the web cake:<br><br><img src='img/web-cake.png' width='240' height='154' alt='web cake'>"
+        },
         {
           "question_text": "the following are all valid selectors except...",
           "answers":
@@ -45,7 +45,7 @@
           "answers":
           [
             { "answer_text": "an ID can be assigned to multiple elements, a class to just one" },
-            { "answer_text": "IDs can only be assigned to specific HTML tags, and classes have no such restrictions" },
+            { "answer_text": "IDs can only be assigned to specific HTML elements, and classes have no such restrictions" },
             { "answer_text": "a class can be assigned to multiple elements, an ID to just one" }
           ],
           "correct_answer": "2"
@@ -60,7 +60,7 @@
             { "answer_text": "through a <code>&lt;meta&gt;</code> tag in the document’s <code>&lt;head&gt;</code>" }
           ],
           "correct_answer": "3",
-          "explanation": "All of these methods are legit except the one that ain’t. Learn more about including styles on your webpage on pages 235–236 of <em>HTML & CSS</em>."
+          "explanation": "All of these methods are legitimate except the one that ain’t. Learn more about including styles on your webpage on pages 235–236 of <em>HTML & CSS</em>."
         },
         {
           "question_text": "a descendent selector is present in which selector below?",
@@ -80,7 +80,7 @@
           [
             { "answer_text": "when rules with identical selectors define the same property, the last rule wins" },
             { "answer_text": "a more specific selector overrides a less specific selector" },
-            { "answer_text": "when rules with identical selectors define the same property, the property’s value can be manually overridden by suffixing it with “!important”" },
+            { "answer_text": "when rules with identical selectors define the same property, the property’s value can be manually overridden by appending “!important” to it" },
             { "answer_text": "a less specific selector inherits the properties of a more specific selector" }
           ],
           "correct_answer": "3",
@@ -106,7 +106,7 @@
             { "answer_text": "false" }
           ],
           "correct_answer": "0",
-          "explanation": "Uh, it’s true: <a href='https://caniuse.com/' target='_blank' rel='noopener'>caniuse.com</a> is an excellent website to consult when you need to know whether a CSS property is supported by a specific version of a specific web browser. If you’re done with the quiz, <a href='https://caniuse.com/' target='_blank' rel='noopener'>check it out right now!</a>"
+          "explanation": "Uh, it’s true: <a href='https://caniuse.com/' target='_blank' rel='noopener'>caniuse.com</a> is an excellent website to consult when you need to know whether a CSS property is supported by a specific version of a specific web browser."
         },
         {
           "question_text": "building accessibility into your project from the beginning has many benefits. those benefits include...",
@@ -117,7 +117,7 @@
             { "answer_text": "lowering costs" },
             { "answer_text": "providing legal protection from lawsuits" },
             { "answer_text": "doing the right thing" },
-            { "answer_text": "seriously? all of the above" }
+            { "answer_text": "all of the above" }
           ],
           "correct_answer": "5",
           "explanation": "See pages 38–39 in <em>Accessiblity for Everyone</em> by Laura Kalbag for more details."
