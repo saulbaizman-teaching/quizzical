@@ -2,7 +2,7 @@ let correct_answer_count = 0 ;
 let answered_question_count = 0 ;
 let total_question_count = jQuery('div.quiz_body').length ;
 let play_sound = false ;
-let debug = true ;
+let debug = false ;
 
 if ( debug ) {
     console.info ('debug is enabled.') ;
@@ -37,11 +37,11 @@ jQuery(document).ready ( function ( ) {
                         question: doc.data().question,
                         student: doc.data().student
                     } ;
-                
+
                     answers.push(question_answer);
                     // console.log("doc.id:",doc.id)
                 });
-        
+
                 let answer_statistics = load_answers ( answers ) ;
                 render_stats ( answer_statistics ) ;
             });
@@ -239,7 +239,7 @@ function load_answers ( answers ) {
 
         let question_answers = [] ;
         for ( let object_array_index = 0 ; object_array_index < answers.length ; object_array_index++ ) {
-            
+
             // Does the outer index match the question number?
             if ( answers[object_array_index].question == question_index ) {
                 question_answers.push (answers[object_array_index].answer) ;
@@ -279,7 +279,7 @@ function render_stats ( stats ) {
     for ( let question_index = 0 ; question_index < stats.length ; question_index++ ) {
         stats_html.append('<h2>question ' + (question_index+1) + '</h2>');
         // jQuery('<h2>question ' + (question_index+1) + '</h2>').appendTo('div#stats');
-        
+
         // we'll assume we only have four possible answers for any given question, even true/false questions
         for ( let answer_index = 0 ; answer_index < 4 ; answer_index++ ) {
 
@@ -364,7 +364,7 @@ function update_answer_tally ( ) {
                 question: doc.data().question,
                 student: doc.data().student
             } ;
-        
+
             answers.push(question_answer);
             // console.log("doc.id:",doc.id)
         });
@@ -380,7 +380,7 @@ function render_quiz_stats ( stats ) {
     for ( let question_index = 0 ; question_index < stats.length ; question_index++ ) {
         // stats_html.append('<h2>question ' + (question_index+1) + '</h2>');
         // jQuery('<h2>question ' + (question_index+1) + '</h2>').appendTo('div#stats');
-        
+
         // we'll assume we only have four possible answers for any given question, even true/false questions
         for ( let answer_index = 0 ; answer_index < 4 ; answer_index++ ) {
 
