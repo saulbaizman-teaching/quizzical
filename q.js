@@ -65,8 +65,8 @@ jQuery(document).ready ( function ( ) {
 
         let question_class = classes[0];
         let answer_class = classes[1];
-        console.log ("question_class:",question_class) ;
-        console.log ("answer_class:",answer_class) ;
+        // console.log ("question_class:",question_class) ;
+        // console.log ("answer_class:",answer_class) ;
         let is_correct_answer = false ;
         let iterator = classes.values();
 
@@ -225,7 +225,7 @@ db.collection("quizzes").doc("quiz2").set({
 /* Load answers for a given quiz. */
 
 function load_answers ( answers ) {
-    console.log('loading answers...')
+    // console.log('loading answers...')
 
     // console.log(questions) ;
 
@@ -269,7 +269,7 @@ function load_answers ( answers ) {
 }
 
 function render_stats ( stats ) {
-    console.log("rendering stats...") ;
+    // console.log("rendering stats...") ;
 
     // console.log(stats) ;
 
@@ -304,7 +304,7 @@ function render_stats ( stats ) {
 // Check for the presence of a student's name. If no name, prompt for one.
 function check_quiz_student_name () {
     if ( document.getElementById('student_name_container' ) ) {
-        console.log ( 'checking for email address...' ) ;
+        // console.log ( 'checking for email address...' ) ;
 
         if ( localStorage.student_name ) {
             set_student_name () ;
@@ -354,7 +354,7 @@ function set_student_name () {
 
 // Update the answer tally.
 function update_answer_tally ( ) {
-    console.log('updating tally...');
+    // console.log('updating tally...');
     db.collection("answers").where("quiz", "==", jQuery('#quiz_selector').val()).orderBy("question")
     .onSnapshot(function(querySnapshot) {
         let answers = [];
